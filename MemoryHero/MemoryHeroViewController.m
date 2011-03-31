@@ -45,19 +45,63 @@
 -(void)viewDidLoad{
     scoreLabel.text = @"9000";
     
-    Song *songTest = [[Song  alloc] init];
-
-    for(int i = 0; i < 4; i++){
-        
-        Note *note = [[Note alloc] set:@"topLeft"];
-        
-        [songTest addNote:note];
-    }
-    
-    
-    [songTest printNotes];
-    
+    //Creates a new thread so program can continue
+    [NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
 }
+
+//Play First Measure
+-(void)goSong{
+    Song *firstSong = [[Song alloc] init];
+    Note *firstNote;
+    //Create Fake Song
+    firstNote = [[Note alloc] set:@"tL"];
+    [firstSong addNote:firstNote];
+    firstNote = [[Note alloc] set:@"tR"];
+    [firstSong addNote:firstNote];
+    firstNote = [[Note alloc] set:@"bR"];
+    [firstSong addNote:firstNote];
+    firstNote = [[Note alloc] set:@"bL"];
+    [firstSong addNote:firstNote];
+    
+    
+    NSMutableArray *beat = [firstSong getBeat];
+    int size = [beat count];
+    Note *note;
+    for(int i = 0;i < size;i++){
+        
+        
+        note = [beat objectAtIndex:i];
+        NSString *str = [note getButtonRef];
+        NSLog(str);
+        UIButton *button;
+        
+        if(str == @"tR"){
+            button = tRButton;
+        }else if(str == @"tL"){
+            button = tLButton;
+        }else if(str == @"bL"){
+            button = bLButton;
+        }else if(str == @"bR"){
+            button = bRButton;
+        }
+        
+        //signals main thread to make UI change
+         dispatch_async( dispatch_get_main_queue(), ^{
+             [button setHighlighted:TRUE];
+         });
+        
+        sleep(1);
+        
+        //signals main thread to make UI change
+        dispatch_async( dispatch_get_main_queue(), ^{
+            [button setHighlighted:FALSE];
+        });
+        
+    }
+
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

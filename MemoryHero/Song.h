@@ -18,5 +18,6 @@
 
 -(void)addNote:(Note *)note;
 -(void)printNotes;
+-(NSMutableArray *)getBeat;
 
 @end

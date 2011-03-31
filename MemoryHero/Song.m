@@ -13,15 +13,16 @@
 
 
 -(id)init{
-    
     beat = [[NSMutableArray alloc] init];
-    
     return self;
 }
 
-
 -(void)addNote:(Note *)note{
     [beat addObject:note];
+}
+
+-(NSMutableArray *)getBeat{
+    return beat;
 }
 
 -(void)printNotes{
