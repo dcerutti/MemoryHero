@@ -10,6 +10,14 @@
 
 @interface MemoryHeroViewController : UIViewController {
     
+    IBOutlet UILabel *scoreLabel;
+    IBOutlet UIButton *topLeftButton;
+    
 }
+
+-(IBAction)topLeftButton;
+-(IBAction)topRightButton;
+-(IBAction)bottomLeftButton;
+-(IBAction)bottomRightButton;
 
 @end

@@ -7,12 +7,56 @@
 //
 
 #import "MemoryHeroViewController.h"
+#import "Song.h"
+#import "Note.h"
 
 @implementation MemoryHeroViewController
+
+-(IBAction)topLeftButton{
+    
+    NSLog(@"topLEFT");
+}
+
+-(IBAction)topRightButton{
+    
+    NSLog(@"topRight");
+    
+    
+}
+-(IBAction)bottomLeftButton{
+    
+    NSLog(@"bottomLeft");
+    
+    
+}
+
+-(IBAction)bottomRightButton{
+    
+    NSLog(@"bottomRight");
+    
+    
+}
 
 - (void)dealloc
 {
     [super dealloc];
+}
+
+-(void)viewDidLoad{
+    scoreLabel.text = @"9000";
+    
+    Song *songTest = [[Song  alloc] init];
+
+    for(int i = 0; i < 4; i++){
+        
+        Note *note = [[Note alloc] set:@"topLeft"];
+        
+        [songTest addNote:note];
+    }
+    
+    
+    [songTest printNotes];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,12 +70,12 @@
 #pragma mark - View lifecycle
 
 /*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
+ // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+ - (void)viewDidLoad
+ {
+ [super viewDidLoad];
+ }
+ */
 
 - (void)viewDidUnload
 {

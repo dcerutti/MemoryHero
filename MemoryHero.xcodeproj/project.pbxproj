@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37082FCB1344D93C00951354 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 37082FCA1344D93C00951354 /* Song.m */; };
+		37082FD21344DAC200951354 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 37082FD11344DAC200951354 /* Note.m */; };
 		3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2971344D00C003F7223 /* UIKit.framework */; };
 		3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2991344D00C003F7223 /* Foundation.framework */; };
 		3798D29C1344D00C003F7223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D29B1344D00C003F7223 /* CoreGraphics.framework */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37082FC91344D93C00951354 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		37082FCA1344D93C00951354 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		37082FD01344DAC200951354 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = MemoryHero.xcodeproj/Note.h; sourceTree = SOURCE_ROOT; };
+		37082FD11344DAC200951354 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = MemoryHero.xcodeproj/Note.m; sourceTree = SOURCE_ROOT; };
 		3798D2931344D00C003F7223 /* MemoryHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3798D2971344D00C003F7223 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3798D2991344D00C003F7223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -155,6 +161,10 @@
 		37F17AAC1344D02A00248097 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				37082FD01344DAC200951354 /* Note.h */,
+				37082FD11344DAC200951354 /* Note.m */,
+				37082FC91344D93C00951354 /* Song.h */,
+				37082FCA1344D93C00951354 /* Song.m */,
 				3798D2AC1344D00C003F7223 /* MemoryHeroViewController.h */,
 				3798D2AD1344D00C003F7223 /* MemoryHeroViewController.m */,
 				3798D2A61344D00C003F7223 /* MemoryHeroAppDelegate.h */,
@@ -301,6 +311,8 @@
 				3798D2A51344D00C003F7223 /* main.m in Sources */,
 				3798D2A81344D00C003F7223 /* MemoryHeroAppDelegate.m in Sources */,
 				3798D2AE1344D00C003F7223 /* MemoryHeroViewController.m in Sources */,
+				37082FCB1344D93C00951354 /* Song.m in Sources */,
+				37082FD21344DAC200951354 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
