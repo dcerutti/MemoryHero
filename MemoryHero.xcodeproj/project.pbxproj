@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2971344D00C003F7223 /* UIKit.framework */; };
+		3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2991344D00C003F7223 /* Foundation.framework */; };
+		3798D29C1344D00C003F7223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D29B1344D00C003F7223 /* CoreGraphics.framework */; };
+		3798D2A21344D00C003F7223 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2A01344D00C003F7223 /* InfoPlist.strings */; };
+		3798D2A51344D00C003F7223 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798D2A41344D00C003F7223 /* main.m */; };
+		3798D2A81344D00C003F7223 /* MemoryHeroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798D2A71344D00C003F7223 /* MemoryHeroAppDelegate.m */; };
+		3798D2AB1344D00C003F7223 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2A91344D00C003F7223 /* MainWindow.xib */; };
+		3798D2AE1344D00C003F7223 /* MemoryHeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798D2AD1344D00C003F7223 /* MemoryHeroViewController.m */; };
+		3798D2B11344D00C003F7223 /* MemoryHeroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2AF1344D00C003F7223 /* MemoryHeroViewController.xib */; };
+		3798D2B81344D00C003F7223 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2971344D00C003F7223 /* UIKit.framework */; };
+		3798D2B91344D00C003F7223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2991344D00C003F7223 /* Foundation.framework */; };
+		3798D2BA1344D00C003F7223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D29B1344D00C003F7223 /* CoreGraphics.framework */; };
+		3798D2C21344D00C003F7223 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2C01344D00C003F7223 /* InfoPlist.strings */; };
+		3798D2C51344D00C003F7223 /* MemoryHeroTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2C41344D00C003F7223 /* MemoryHeroTests.h */; };
+		3798D2C71344D00C003F7223 /* MemoryHeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798D2C61344D00C003F7223 /* MemoryHeroTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3798D2BB1344D00C003F7223 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3798D28A1344D00C003F7223 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3798D2921344D00C003F7223;
+			remoteInfo = MemoryHero;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3798D2931344D00C003F7223 /* MemoryHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3798D2971344D00C003F7223 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3798D2991344D00C003F7223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3798D29B1344D00C003F7223 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3798D29F1344D00C003F7223 /* MemoryHero-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MemoryHero-Info.plist"; sourceTree = "<group>"; };
+		3798D2A11344D00C003F7223 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3798D2A31344D00C003F7223 /* MemoryHero-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MemoryHero-Prefix.pch"; sourceTree = "<group>"; };
+		3798D2A41344D00C003F7223 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3798D2A61344D00C003F7223 /* MemoryHeroAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryHeroAppDelegate.h; sourceTree = "<group>"; };
+		3798D2A71344D00C003F7223 /* MemoryHeroAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryHeroAppDelegate.m; sourceTree = "<group>"; };
+		3798D2AA1344D00C003F7223 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		3798D2AC1344D00C003F7223 /* MemoryHeroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryHeroViewController.h; sourceTree = "<group>"; };
+		3798D2AD1344D00C003F7223 /* MemoryHeroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryHeroViewController.m; sourceTree = "<group>"; };
+		3798D2B01344D00C003F7223 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MemoryHeroViewController.xib; sourceTree = "<group>"; };
+		3798D2B71344D00C003F7223 /* MemoryHeroTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoryHeroTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3798D2BF1344D00C003F7223 /* MemoryHeroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MemoryHeroTests-Info.plist"; sourceTree = "<group>"; };
+		3798D2C11344D00C003F7223 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3798D2C31344D00C003F7223 /* MemoryHeroTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MemoryHeroTests-Prefix.pch"; sourceTree = "<group>"; };
+		3798D2C41344D00C003F7223 /* MemoryHeroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryHeroTests.h; sourceTree = "<group>"; };
+		3798D2C61344D00C003F7223 /* MemoryHeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryHeroTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3798D2901344D00C003F7223 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */,
+				3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */,
+				3798D29C1344D00C003F7223 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3798D2B31344D00C003F7223 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3798D2B81344D00C003F7223 /* UIKit.framework in Frameworks */,
+				3798D2B91344D00C003F7223 /* Foundation.framework in Frameworks */,
+				3798D2BA1344D00C003F7223 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3798D2881344D00C003F7223 = {
+			isa = PBXGroup;
+			children = (
+				3798D29D1344D00C003F7223 /* MemoryHero */,
+				3798D2BD1344D00C003F7223 /* MemoryHeroTests */,
+				3798D2961344D00C003F7223 /* Frameworks */,
+				3798D2941344D00C003F7223 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3798D2941344D00C003F7223 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3798D2931344D00C003F7223 /* MemoryHero.app */,
+				3798D2B71344D00C003F7223 /* MemoryHeroTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3798D2961344D00C003F7223 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3798D2971344D00C003F7223 /* UIKit.framework */,
+				3798D2991344D00C003F7223 /* Foundation.framework */,
+				3798D29B1344D00C003F7223 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3798D29D1344D00C003F7223 /* MemoryHero */ = {
+			isa = PBXGroup;
+			children = (
+				37F17AAC1344D02A00248097 /* Classes */,
+				37F17AAE1344D03500248097 /* Resources */,
+				37F17AAF1344D03E00248097 /* Images */,
+				3798D29E1344D00C003F7223 /* Supporting Files */,
+			);
+			path = MemoryHero;
+			sourceTree = "<group>";
+		};
+		3798D29E1344D00C003F7223 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3798D29F1344D00C003F7223 /* MemoryHero-Info.plist */,
+				3798D2A01344D00C003F7223 /* InfoPlist.strings */,
+				3798D2A31344D00C003F7223 /* MemoryHero-Prefix.pch */,
+				3798D2A41344D00C003F7223 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3798D2BD1344D00C003F7223 /* MemoryHeroTests */ = {
+			isa = PBXGroup;
+			children = (
+				3798D2C41344D00C003F7223 /* MemoryHeroTests.h */,
+				3798D2C61344D00C003F7223 /* MemoryHeroTests.m */,
+				3798D2BE1344D00C003F7223 /* Supporting Files */,
+			);
+			path = MemoryHeroTests;
+			sourceTree = "<group>";
+		};
+		3798D2BE1344D00C003F7223 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3798D2BF1344D00C003F7223 /* MemoryHeroTests-Info.plist */,
+				3798D2C01344D00C003F7223 /* InfoPlist.strings */,
+				3798D2C31344D00C003F7223 /* MemoryHeroTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37F17AAC1344D02A00248097 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3798D2AC1344D00C003F7223 /* MemoryHeroViewController.h */,
+				3798D2AD1344D00C003F7223 /* MemoryHeroViewController.m */,
+				3798D2A61344D00C003F7223 /* MemoryHeroAppDelegate.h */,
+				3798D2A71344D00C003F7223 /* MemoryHeroAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		37F17AAE1344D03500248097 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3798D2AF1344D00C003F7223 /* MemoryHeroViewController.xib */,
+				3798D2A91344D00C003F7223 /* MainWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		37F17AAF1344D03E00248097 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3798D2921344D00C003F7223 /* MemoryHero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3798D2CA1344D00C003F7223 /* Build configuration list for PBXNativeTarget "MemoryHero" */;
+			buildPhases = (
+				3798D28F1344D00C003F7223 /* Sources */,
+				3798D2901344D00C003F7223 /* Frameworks */,
+				3798D2911344D00C003F7223 /* Resources */,
+				37F17AB81344D09200248097 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MemoryHero;
+			productName = MemoryHero;
+			productReference = 3798D2931344D00C003F7223 /* MemoryHero.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3798D2B61344D00C003F7223 /* MemoryHeroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3798D2CD1344D00C003F7223 /* Build configuration list for PBXNativeTarget "MemoryHeroTests" */;
+			buildPhases = (
+				3798D2B21344D00C003F7223 /* Sources */,
+				3798D2B31344D00C003F7223 /* Frameworks */,
+				3798D2B41344D00C003F7223 /* Resources */,
+				3798D2B51344D00C003F7223 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3798D2BC1344D00C003F7223 /* PBXTargetDependency */,
+			);
+			name = MemoryHeroTests;
+			productName = MemoryHeroTests;
+			productReference = 3798D2B71344D00C003F7223 /* MemoryHeroTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3798D28A1344D00C003F7223 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3798D28D1344D00C003F7223 /* Build configuration list for PBXProject "MemoryHero" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3798D2881344D00C003F7223;
+			productRefGroup = 3798D2941344D00C003F7223 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3798D2921344D00C003F7223 /* MemoryHero */,
+				3798D2B61344D00C003F7223 /* MemoryHeroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3798D2911344D00C003F7223 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3798D2A21344D00C003F7223 /* InfoPlist.strings in Resources */,
+				3798D2AB1344D00C003F7223 /* MainWindow.xib in Resources */,
+				3798D2B11344D00C003F7223 /* MemoryHeroViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3798D2B41344D00C003F7223 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3798D2C21344D00C003F7223 /* InfoPlist.strings in Resources */,
+				3798D2C51344D00C003F7223 /* MemoryHeroTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3798D2B51344D00C003F7223 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		37F17AB81344D09200248097 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Developer/iphoneentitlements401/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3798D28F1344D00C003F7223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3798D2A51344D00C003F7223 /* main.m in Sources */,
+				3798D2A81344D00C003F7223 /* MemoryHeroAppDelegate.m in Sources */,
+				3798D2AE1344D00C003F7223 /* MemoryHeroViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3798D2B21344D00C003F7223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3798D2C71344D00C003F7223 /* MemoryHeroTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3798D2BC1344D00C003F7223 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3798D2921344D00C003F7223 /* MemoryHero */;
+			targetProxy = 3798D2BB1344D00C003F7223 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3798D2A01344D00C003F7223 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3798D2A11344D00C003F7223 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3798D2A91344D00C003F7223 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3798D2AA1344D00C003F7223 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		3798D2AF1344D00C003F7223 /* MemoryHeroViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3798D2B01344D00C003F7223 /* en */,
+			);
+			name = MemoryHeroViewController.xib;
+			sourceTree = "<group>";
+		};
+		3798D2C01344D00C003F7223 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3798D2C11344D00C003F7223 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3798D2C81344D00C003F7223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3798D2C91344D00C003F7223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		3798D2CB1344D00C003F7223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MemoryHero/MemoryHero-Prefix.pch";
+				INFOPLIST_FILE = "MemoryHero/MemoryHero-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3798D2CC1344D00C003F7223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MemoryHero/MemoryHero-Prefix.pch";
+				INFOPLIST_FILE = "MemoryHero/MemoryHero-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3798D2CE1344D00C003F7223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MemoryHero.app/MemoryHero";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MemoryHeroTests/MemoryHeroTests-Prefix.pch";
+				INFOPLIST_FILE = "MemoryHeroTests/MemoryHeroTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		3798D2CF1344D00C003F7223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MemoryHero.app/MemoryHero";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MemoryHeroTests/MemoryHeroTests-Prefix.pch";
+				INFOPLIST_FILE = "MemoryHeroTests/MemoryHeroTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3798D28D1344D00C003F7223 /* Build configuration list for PBXProject "MemoryHero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3798D2C81344D00C003F7223 /* Debug */,
+				3798D2C91344D00C003F7223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3798D2CA1344D00C003F7223 /* Build configuration list for PBXNativeTarget "MemoryHero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3798D2CB1344D00C003F7223 /* Debug */,
+				3798D2CC1344D00C003F7223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3798D2CD1344D00C003F7223 /* Build configuration list for PBXNativeTarget "MemoryHeroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3798D2CE1344D00C003F7223 /* Debug */,
+				3798D2CF1344D00C003F7223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3798D28A1344D00C003F7223 /* Project object */;
+}
