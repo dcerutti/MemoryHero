@@ -12,8 +12,11 @@
 @interface Note : NSObject {
     
     NSString *button;
+    BOOL didCheck;
     
 }
+
+@property (nonatomic)BOOL didCheck;
 
 -(Note *) set:(NSString *)buttonRef;
 -(NSString *)getButtonRef;

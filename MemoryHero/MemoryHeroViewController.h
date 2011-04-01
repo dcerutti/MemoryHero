@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Song;
+
 @interface MemoryHeroViewController : UIViewController {
     
     IBOutlet UILabel *scoreLabel;
@@ -15,10 +17,17 @@
     IBOutlet UIButton *tRButton;
     IBOutlet UIButton *bRButton;
     IBOutlet UIButton *bLButton;
+    IBOutlet UILabel *status;
+    
+    //temp variables
+    NSMutableArray *usrTurn;
+    Song *currentSong;
+    int beatCount;
     
 }
 
 -(void)goSong;
+-(void)usrTurn;
 -(IBAction)topLeftButton;
 -(IBAction)topRightButton;
 -(IBAction)bottomLeftButton;

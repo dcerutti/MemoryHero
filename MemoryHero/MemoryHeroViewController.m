@@ -15,17 +15,24 @@
 -(IBAction)topLeftButton{
     
     NSLog(@"topLEFT");
+    
+    [usrTurn addObject:@"tL"];
+    beatCount++;
+    
 }
 
 -(IBAction)topRightButton{
     
     NSLog(@"topRight");
-    
+    [usrTurn addObject:@"tR"];
+    beatCount++;
     
 }
 -(IBAction)bottomLeftButton{
     
     NSLog(@"bottomLeft");
+    [usrTurn addObject:@"bL"];
+    beatCount++;
     
     
 }
@@ -33,6 +40,8 @@
 -(IBAction)bottomRightButton{
     
     NSLog(@"bottomRight");
+    [usrTurn addObject:@"bR"];
+    beatCount++;
     
     
 }
@@ -47,10 +56,21 @@
     
     //Creates a new thread so program can continue
     [NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
+    
+    
 }
 
 //Play First Measure
 -(void)goSong{
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    
+    dispatch_async( dispatch_get_main_queue(), ^{
+        status.text = @"wait";
+        
+    });
+    
     Song *firstSong = [[Song alloc] init];
     Note *firstNote;
     //Create Fake Song
@@ -63,8 +83,10 @@
     firstNote = [[Note alloc] set:@"bL"];
     [firstSong addNote:firstNote];
     
-    
+    //set global song to song created
+    currentSong = firstSong;
     NSMutableArray *beat = [firstSong getBeat];
+    
     int size = [beat count];
     Note *note;
     for(int i = 0;i < size;i++){
@@ -86,9 +108,9 @@
         }
         
         //signals main thread to make UI change
-         dispatch_async( dispatch_get_main_queue(), ^{
-             [button setHighlighted:TRUE];
-         });
+        dispatch_async( dispatch_get_main_queue(), ^{
+            [button setHighlighted:TRUE];
+        });
         
         sleep(1);
         
@@ -98,10 +120,81 @@
         });
         
     }
-
+    
+    
+    [NSThread detachNewThreadSelector:@selector(usrTurn) toTarget:self withObject:nil];
+    [pool release];
 }
 
+//method that runs while usr is typing pattern
 
+-(void)usrTurn{
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    dispatch_async( dispatch_get_main_queue(), ^{
+        status.text = @"GO!";
+    });
+    
+    usrTurn = [[NSMutableArray alloc]init];
+    NSMutableArray *beat = [currentSong getBeat];
+    beatCount = -1;
+    NSString *strUsr;
+    NSString *strCS;
+    Note *csNote;
+    BOOL escapeFlag = true;
+    int score = 0;//temp
+    while(escapeFlag){
+        
+        
+        //right now it waits for u to match pattern but it will eventually wait based on time.
+        if(beatCount != -1){
+            
+            sleep(.1);
+            strUsr = [usrTurn objectAtIndex:beatCount];
+            strCS = [[beat objectAtIndex:beatCount] getButtonRef];
+            csNote = [beat objectAtIndex:beatCount];
+            
+            
+            if(!csNote.didCheck){
+                
+                csNote.didCheck = TRUE;
+                
+                if(strUsr == strCS){
+                    
+                    score++;
+                    dispatch_async( dispatch_get_main_queue(), ^{
+                        status.text = @"Great!";
+                        
+                    });
+                    
+                }else{
+                    
+                    dispatch_async( dispatch_get_main_queue(), ^{
+                        status.text = @"BAD!";
+                    });
+                }
+                
+            }
+            
+        }
+        
+        
+        if(beatCount == [beat count] - 1){
+            escapeFlag = false;
+        }
+        
+        
+    }
+    
+    dispatch_async( dispatch_get_main_queue(), ^{
+        status.text = [NSString stringWithFormat:@"%d/%d Correct", score,[beat count]];
+    });
+    
+    [pool release];
+    [usrTurn release];
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

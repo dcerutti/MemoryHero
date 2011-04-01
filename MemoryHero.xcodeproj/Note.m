@@ -10,12 +10,12 @@
 
 
 @implementation Note
-
+@synthesize didCheck;
 
 -(Note *)set:(NSString *)buttonRef{
     
     button = buttonRef;
-    
+    didCheck = false;
     return self;
 }
 
