@@ -39,8 +39,8 @@
 /* Begin PBXFileReference section */
 		37082FC91344D93C00951354 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		37082FCA1344D93C00951354 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
-		37082FD01344DAC200951354 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = MemoryHero.xcodeproj/Note.h; sourceTree = SOURCE_ROOT; };
-		37082FD11344DAC200951354 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = MemoryHero.xcodeproj/Note.m; sourceTree = SOURCE_ROOT; };
+		37082FD01344DAC200951354 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = MemoryHero/Note.h; sourceTree = SOURCE_ROOT; };
+		37082FD11344DAC200951354 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = MemoryHero/Note.m; sourceTree = SOURCE_ROOT; };
 		3798D2931344D00C003F7223 /* MemoryHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3798D2971344D00C003F7223 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3798D2991344D00C003F7223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
