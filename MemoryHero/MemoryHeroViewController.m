@@ -16,8 +16,10 @@
     
     NSLog(@"topLEFT");
     
-    [usrTurn addObject:@"tL"];
-    beatCount++;
+    if(usrTurn != NULL){
+        [usrTurn addObject:@"tL"];
+        beatCount++;
+    }
     
 }
 
@@ -52,11 +54,9 @@
 }
 
 -(void)viewDidLoad{
-    scoreLabel.text = @"9000";
     
     //Creates a new thread so program can continue
-    [NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
-    
+    //[NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
     
 }
 
@@ -193,6 +193,7 @@
     
     [pool release];
     [usrTurn release];
+    usrTurn = NULL;
     
 }
 

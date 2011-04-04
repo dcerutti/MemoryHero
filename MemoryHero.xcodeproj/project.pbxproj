@@ -24,6 +24,7 @@
 		3798D2C21344D00C003F7223 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2C01344D00C003F7223 /* InfoPlist.strings */; };
 		3798D2C51344D00C003F7223 /* MemoryHeroTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2C41344D00C003F7223 /* MemoryHeroTests.h */; };
 		3798D2C71344D00C003F7223 /* MemoryHeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798D2C61344D00C003F7223 /* MemoryHeroTests.m */; };
+		37FFA536134A1C7D0089C11E /* SongLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFA535134A1C7D0089C11E /* SongLibrary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		3798D2C31344D00C003F7223 /* MemoryHeroTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MemoryHeroTests-Prefix.pch"; sourceTree = "<group>"; };
 		3798D2C41344D00C003F7223 /* MemoryHeroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryHeroTests.h; sourceTree = "<group>"; };
 		3798D2C61344D00C003F7223 /* MemoryHeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryHeroTests.m; sourceTree = "<group>"; };
+		37FFA534134A1C7D0089C11E /* SongLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongLibrary.h; sourceTree = "<group>"; };
+		37FFA535134A1C7D0089C11E /* SongLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongLibrary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				37082FD11344DAC200951354 /* Note.m */,
 				37082FC91344D93C00951354 /* Song.h */,
 				37082FCA1344D93C00951354 /* Song.m */,
+				37FFA534134A1C7D0089C11E /* SongLibrary.h */,
+				37FFA535134A1C7D0089C11E /* SongLibrary.m */,
 				3798D2AC1344D00C003F7223 /* MemoryHeroViewController.h */,
 				3798D2AD1344D00C003F7223 /* MemoryHeroViewController.m */,
 				3798D2A61344D00C003F7223 /* MemoryHeroAppDelegate.h */,
@@ -313,6 +318,7 @@
 				3798D2AE1344D00C003F7223 /* MemoryHeroViewController.m in Sources */,
 				37082FCB1344D93C00951354 /* Song.m in Sources */,
 				37082FD21344DAC200951354 /* Note.m in Sources */,
+				37FFA536134A1C7D0089C11E /* SongLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +418,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MemoryHero/MemoryHero-Prefix.pch";
 				INFOPLIST_FILE = "MemoryHero/MemoryHero-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -426,6 +433,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MemoryHero/MemoryHero-Prefix.pch";
 				INFOPLIST_FILE = "MemoryHero/MemoryHero-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
