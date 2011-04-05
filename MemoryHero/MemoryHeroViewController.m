@@ -111,7 +111,8 @@
     [NSThread detachNewThreadSelector:@selector(generator) toTarget:self withObject:nil];
     
     //Creates a new thread so program can continue
-    //[NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
+    scoreLabel.text = @"0";
     
 }
 
@@ -137,6 +138,7 @@
     [firstSong addNote:firstNote];
     firstNote = [[Note alloc] set:@"bL"];
     [firstSong addNote:firstNote];
+    
     
     //set global song to song created
     currentSong = firstSong;
@@ -220,6 +222,10 @@
                     score++;
                     dispatch_async( dispatch_get_main_queue(), ^{
                         status.text = @"Great!";
+                        //Everytime a button is correctly hit, score increases by 300. We can change increment later if we like especially when it comes to the beat
+                        int scoreboard = 0;
+                        scoreboard = score * 300;
+                        scoreLabel.text = [NSString stringWithFormat:@"%d",scoreboard];
                         
                     });
                     
@@ -227,6 +233,10 @@
                     
                     dispatch_async( dispatch_get_main_queue(), ^{
                         status.text = @"BAD!";
+                        //Everytime a button is correctly hit, score increases by 300. We can change increment later if we like especially when it comes to the beat
+                        int scoreboard = 0;
+                        scoreboard = score * 300;
+                        scoreLabel.text = [NSString stringWithFormat:@"%d",scoreboard];
                     });
                 }
                 
