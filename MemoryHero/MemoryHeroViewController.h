@@ -26,6 +26,9 @@
     
 }
 
+-(void)generator;
+-(void)tempNote;
+
 -(void)goSong;
 -(void)usrTurn;
 -(IBAction)topLeftButton;

@@ -53,7 +53,62 @@
     [super dealloc];
 }
 
+-(void)tempNote{
+    
+    CGRect myImageRect = CGRectMake(310,183, 20.0f, 20.0f); 
+    UIImageView *myImage = [[UIImageView alloc] initWithFrame:myImageRect];
+    dispatch_async( dispatch_get_main_queue(), ^{
+        
+        //CGRect myImageRect = CGRectMake(310,183, 20.0f, 20.0f); 
+        //UIImageView *myImage = [[UIImageView alloc] initWithFrame:myImageRect];
+        [myImage setImage:[UIImage imageNamed:@"circle.png"]];
+        myImage.opaque = YES; // explicitly opaque for performance
+        [self.view addSubview:myImage];
+        //[myImage release];
+
+        
+    });
+    
+    Boolean flag = true;
+    
+    
+    int x = 310;
+    while(flag){
+        
+        x -= 1;
+        
+        [NSThread sleepForTimeInterval:0.0178];
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            
+            CGPoint position = myImage.center;
+            position.x -= 1;
+            [myImage setCenter:position];
+            
+        });
+        
+        if( x < 30){
+            flag = false;
+        }
+        
+    }
+    
+
+    [myImage removeFromSuperview];
+    [myImage release];
+    
+}
+
+-(void)generator{
+    for(int i = 0; i < 5; i++){
+        [NSThread detachNewThreadSelector:@selector(tempNote) toTarget:self withObject:nil];
+        sleep(1);
+    }
+}
+
 -(void)viewDidLoad{
+    
+    [NSThread detachNewThreadSelector:@selector(generator) toTarget:self withObject:nil];
     
     //Creates a new thread so program can continue
     //[NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];

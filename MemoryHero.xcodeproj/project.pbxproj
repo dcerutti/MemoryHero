@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37082FCB1344D93C00951354 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 37082FCA1344D93C00951354 /* Song.m */; };
 		37082FD21344DAC200951354 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 37082FD11344DAC200951354 /* Note.m */; };
+		37133D72134AE2F50032A94F /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 37133D71134AE2F50032A94F /* circle.png */; };
 		3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2971344D00C003F7223 /* UIKit.framework */; };
 		3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2991344D00C003F7223 /* Foundation.framework */; };
 		3798D29C1344D00C003F7223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D29B1344D00C003F7223 /* CoreGraphics.framework */; };
@@ -42,6 +43,7 @@
 		37082FCA1344D93C00951354 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		37082FD01344DAC200951354 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = MemoryHero/Note.h; sourceTree = SOURCE_ROOT; };
 		37082FD11344DAC200951354 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = MemoryHero/Note.m; sourceTree = SOURCE_ROOT; };
+		37133D71134AE2F50032A94F /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		3798D2931344D00C003F7223 /* MemoryHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3798D2971344D00C003F7223 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3798D2991344D00C003F7223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -190,6 +192,7 @@
 		37F17AAF1344D03E00248097 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				37133D71134AE2F50032A94F /* circle.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				3798D2A21344D00C003F7223 /* InfoPlist.strings in Resources */,
 				3798D2AB1344D00C003F7223 /* MainWindow.xib in Resources */,
 				3798D2B11344D00C003F7223 /* MemoryHeroViewController.xib in Resources */,
+				37133D72134AE2F50032A94F /* circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
