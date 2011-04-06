@@ -16,6 +16,6 @@
     
 }
 
--(Song *)getSong:(NSInteger *)index;
+-(Song *)getSong:(NSInteger)index;
 
 @end

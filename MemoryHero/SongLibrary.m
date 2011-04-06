@@ -17,7 +17,7 @@
     return self;
 }
 
--(Song *)getSong:(NSInteger *)index{
+-(Song *)getSong:(NSInteger)index{
     return [library objectAtIndex:index]; 
 }
 

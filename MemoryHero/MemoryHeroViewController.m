@@ -55,6 +55,7 @@
 
 -(void)tempNote{
     
+    
     CGRect myImageRect = CGRectMake(310,183, 20.0f, 20.0f); 
     UIImageView *myImage = [[UIImageView alloc] initWithFrame:myImageRect];
     dispatch_async( dispatch_get_main_queue(), ^{
@@ -96,14 +97,18 @@
 
     [myImage removeFromSuperview];
     [myImage release];
-    
+ 
 }
 
 -(void)generator{
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     for(int i = 0; i < 5; i++){
         [NSThread detachNewThreadSelector:@selector(tempNote) toTarget:self withObject:nil];
         sleep(1);
     }
+    
+       [pool release];
 }
 
 -(void)viewDidLoad{
