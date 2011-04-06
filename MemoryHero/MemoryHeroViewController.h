@@ -3,7 +3,7 @@
 //  MemoryHero
 //
 //  Created by Dan Cerutti on 3/31/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.  Don't forget that this is open source.
 //
 
 #import <UIKit/UIKit.h>
