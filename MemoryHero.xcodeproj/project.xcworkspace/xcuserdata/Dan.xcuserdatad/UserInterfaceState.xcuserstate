@@ -2057,7 +2057,7 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>323764217.10642499</real>
+		<real>323764223.05479401</real>
 		<string>{0, 741}</string>
 		<false/>
 		<string>{152, 0}</string>
@@ -2468,7 +2468,7 @@
 			</dict>
 		</dict>
 		<string>file://localhost/Users/Dan/Desktop/memoryhero/MemoryHero/MemoryHero.xcodeproj/</string>
-		<real>323764217.104725</real>
+		<real>323764223.05376101</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13198,8 +13198,8 @@
 				</dict>
 			</array>
 		</dict>
-		<real>323764217.10272801</real>
-		<string>{276138, 800}</string>
+		<real>323764223.05312002</real>
+		<string>{276136, 790}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13701,7 +13701,7 @@
 				<integer>1006</integer>
 			</dict>
 		</dict>
-		<real>323764217.10219502</real>
+		<real>323764223.052544</real>
 		<dict>
 			<key>$class</key>
 			<dict>
