@@ -103,7 +103,7 @@
 -(void)generator{
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 4; i++){
         [NSThread detachNewThreadSelector:@selector(tempNote) toTarget:self withObject:nil];
         sleep(1);
     }
