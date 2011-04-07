@@ -11,6 +11,7 @@
 #import "Note.h"
 #import "SongLibrary.h"
 #import "NoteImage.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation MemoryHeroViewController
 
@@ -109,6 +110,8 @@
     
     int count = [noteImages count];
     NSLog(@"DONE = %d",count);
+    sleep(1);
+    [audioPlayer stop];
 }
 
 
@@ -118,6 +121,7 @@
     
     noteImages = [[NSMutableArray alloc]init];
     [NSThread detachNewThreadSelector:@selector(moveNotes) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(playAudio) toTarget:self withObject:nil];
     
     SongLibrary *sL = [[SongLibrary alloc]init];
     Song *litz = [sL getSong:0];
@@ -133,6 +137,8 @@
         
         NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
         NSTimeInterval totalTime = nowTime - startTime;
+    
+
         
         float sleepTime = timeBeat - totalTime;
         [NSThread sleepForTimeInterval:sleepTime];
@@ -152,6 +158,22 @@
     }
     
     [pool release];
+}
+
+-(void)playAudio{
+    
+    [NSThread sleepForTimeInterval:3.7];
+    
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Lisztomania.mp3", [[NSBundle mainBundle] resourcePath]]];
+    
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = 0;
+    
+    if (audioPlayer == nil)
+        NSLog([error description]);
+    else
+        [audioPlayer play];
 }
 
 -(void)viewDidLoad{

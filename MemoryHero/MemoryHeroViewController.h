@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @class Song;
 
@@ -21,6 +22,7 @@
     
     //Tracker variables
     NSMutableArray *noteImages;
+    AVAudioPlayer *audioPlayer;
     
     //temp variables
     NSMutableArray *usrTurn;
@@ -31,6 +33,7 @@
 
 -(void)generator;
 -(void)moveNotes;
+-(void)playAudio;
 
 -(void)goSong;
 -(void)usrTurn;
