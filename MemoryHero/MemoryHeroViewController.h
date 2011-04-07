@@ -19,6 +19,9 @@
     IBOutlet UIButton *bLButton;
     IBOutlet UILabel *status;
     
+    //Tracker variables
+    NSMutableArray *noteImages;
+    
     //temp variables
     NSMutableArray *usrTurn;
     Song *currentSong;
@@ -27,8 +30,7 @@
 }
 
 -(void)generator;
--(void)tempNote;
--(void)moveOne:(UIImageView *)picture;
+-(void)moveNotes;
 
 -(void)goSong;
 -(void)usrTurn;

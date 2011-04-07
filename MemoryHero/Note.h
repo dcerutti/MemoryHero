@@ -13,7 +13,7 @@
     
     NSString *button;
     double timeStamp;
-    BOOL didCheck;
+    BOOL didCheck,lastNote;
     
 }
 

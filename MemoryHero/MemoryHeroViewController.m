@@ -10,6 +10,7 @@
 #import "Song.h"
 #import "Note.h"
 #import "SongLibrary.h"
+#import "NoteImage.h"
 
 @implementation MemoryHeroViewController
 
@@ -54,68 +55,69 @@
     [super dealloc];
 }
 
--(void)tempNote{
+-(void)moveNotes{
     
-    
-    CGRect myImageRect = CGRectMake(310,183, 20.0f, 20.0f); 
-    UIImageView *myImage = [[UIImageView alloc] initWithFrame:myImageRect];
-    dispatch_async( dispatch_get_main_queue(), ^{
-        
-        //CGRect myImageRect = CGRectMake(310,183, 20.0f, 20.0f); 
-        //UIImageView *myImage = [[UIImageView alloc] initWithFrame:myImageRect];
-        [myImage setImage:[UIImage imageNamed:@"circle.png"]];
-        myImage.opaque = YES; // explicitly opaque for performance
-        [self.view addSubview:myImage];
-        //[myImage release];
-
-        
-    });
-    
-    Boolean flag = true;
-    
-    
-    int x = 310;
+    BOOL flag = true;
     while(flag){
-        
-        x -= 4;
         
         [NSThread sleepForTimeInterval:0.0214285714];
         
-        dispatch_async( dispatch_get_main_queue(), ^{
-            
-            CGPoint position = myImage.center;
-            position.x -= 4;
-            [myImage setCenter:position];
-            
-        });
+        int count = [noteImages count];
         
-        if( x < 30){
-            flag = false;
-        }
+        for(int i = 0; i < count; i++){
+            
+            NoteImage *temp = [noteImages objectAtIndex:i];
+            
+            if(!temp.didFinish){
+                
+                UIImageView *image = temp.image;
+                
+                CGPoint position = image.center;
+                
+                //hideNote
+                if(position.x <= 30){
+                    
+                    dispatch_async( dispatch_get_main_queue(), ^{
+                        
+                        [image removeFromSuperview];
+                        temp.didFinish = true;
+                        
+                    });
+                    
+                    if(temp.isLastNote){
+                        flag = false;
+                    }
+                }
+                
+                //moveNote
+                dispatch_async( dispatch_get_main_queue(), ^{
+                    
+                    CGPoint position = image.center;
+                    position.x -= 4;
+                    [image setCenter:position];
+                    
+                });
+                
+                
+            }//endDidFinsh
+            
+            
+        }//end forloop
         
-    }
+        
+    }//end while
     
-
-    [myImage removeFromSuperview];
-    [myImage release];
- 
-}
-
--(void)moveOne:(UIImageView *)picture{
-    CGPoint position = picture.center;
-    position.x -= 5;
-    [picture setCenter:position];
+    int count = [noteImages count];
+    NSLog(@"DONE = %d",count);
 }
 
 
 -(void)generator{
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-//    for(int i = 0; i < 4; i++){
-//        [NSThread detachNewThreadSelector:@selector(tempNote) toTarget:self withObject:nil];
-//        sleep(1);
-//    }
-//    
+    
+    noteImages = [[NSMutableArray alloc]init];
+    [NSThread detachNewThreadSelector:@selector(moveNotes) toTarget:self withObject:nil];
     
     SongLibrary *sL = [[SongLibrary alloc]init];
     Song *litz = [sL getSong:0];
@@ -123,7 +125,7 @@
     int count = [beats count];
     
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
-
+    
     for(int i = 0; i < count; i++){
         
         Note *noteNow = [beats objectAtIndex:i];
@@ -135,13 +137,21 @@
         float sleepTime = timeBeat - totalTime;
         [NSThread sleepForTimeInterval:sleepTime];
         
-        [NSThread detachNewThreadSelector:@selector(tempNote) toTarget:self withObject:nil];
+        dispatch_async( dispatch_get_main_queue(), ^{
+            
+            NoteImage *temp = [[NoteImage alloc]init];
+            [self.view addSubview:temp.image];
+            [noteImages addObject:temp];
+            
+            if(i == count - 1){
+                temp.isLastNote = true;
+            }
+            
+        });
         
     }
     
-    
-        
-       [pool release];
+    [pool release];
 }
 
 -(void)viewDidLoad{
