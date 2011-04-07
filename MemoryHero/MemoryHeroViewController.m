@@ -9,6 +9,7 @@
 #import "MemoryHeroViewController.h"
 #import "Song.h"
 #import "Note.h"
+#import "SongLibrary.h"
 
 @implementation MemoryHeroViewController
 
@@ -76,14 +77,14 @@
     int x = 310;
     while(flag){
         
-        x -= 1;
+        x -= 4;
         
-        [NSThread sleepForTimeInterval:0.0178];
+        [NSThread sleepForTimeInterval:0.0214285714];
         
         dispatch_async( dispatch_get_main_queue(), ^{
             
             CGPoint position = myImage.center;
-            position.x -= 1;
+            position.x -= 4;
             [myImage setCenter:position];
             
         });
@@ -100,14 +101,46 @@
  
 }
 
+-(void)moveOne:(UIImageView *)picture{
+    CGPoint position = picture.center;
+    position.x -= 5;
+    [picture setCenter:position];
+}
+
+
 -(void)generator{
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    for(int i = 0; i < 4; i++){
+//    for(int i = 0; i < 4; i++){
+//        [NSThread detachNewThreadSelector:@selector(tempNote) toTarget:self withObject:nil];
+//        sleep(1);
+//    }
+//    
+    
+    SongLibrary *sL = [[SongLibrary alloc]init];
+    Song *litz = [sL getSong:0];
+    NSMutableArray *beats = [litz getBeat];
+    int count = [beats count];
+    
+    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
+
+    for(int i = 0; i < count; i++){
+        
+        Note *noteNow = [beats objectAtIndex:i];
+        float timeBeat = noteNow.timeStamp + 1.5;
+        
+        NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
+        NSTimeInterval totalTime = nowTime - startTime;
+        
+        float sleepTime = timeBeat - totalTime;
+        [NSThread sleepForTimeInterval:sleepTime];
+        
         [NSThread detachNewThreadSelector:@selector(tempNote) toTarget:self withObject:nil];
-        sleep(1);
+        
     }
     
+    
+        
        [pool release];
 }
 

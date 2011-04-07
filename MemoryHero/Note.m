@@ -10,7 +10,7 @@
 
 
 @implementation Note
-@synthesize didCheck;
+@synthesize didCheck,timeStamp;
 
 -(Note *)set:(NSString *)buttonRef{
     
@@ -18,6 +18,14 @@
     didCheck = false;
     return self;
 }
+
+-(Note *)set:(NSString *)buttonRef :(double)time{
+    
+    button = buttonRef;
+    timeStamp = time;
+    return self;
+}
+
 
 -(NSString *)getButtonRef{
     return button;

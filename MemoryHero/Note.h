@@ -12,13 +12,16 @@
 @interface Note : NSObject {
     
     NSString *button;
+    double timeStamp;
     BOOL didCheck;
     
 }
 
 @property (nonatomic)BOOL didCheck;
+@property (nonatomic)double timeStamp;
 
 -(Note *) set:(NSString *)buttonRef;
+-(Note *) set:(NSString *)buttonRef:(double)time;
 -(NSString *)getButtonRef;
 
 

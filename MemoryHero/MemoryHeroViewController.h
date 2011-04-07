@@ -28,6 +28,7 @@
 
 -(void)generator;
 -(void)tempNote;
+-(void)moveOne:(UIImageView *)picture;
 
 -(void)goSong;
 -(void)usrTurn;
