@@ -13,11 +13,14 @@
 @interface Song : NSObject {
     
     NSMutableArray *beat;
+    NSString *name;
     
 }
 
 -(void)addNote:(Note *)note;
 -(void)printNotes;
+-(void)setName:(NSString *)songName;
+-(NSString *)getName;
 -(NSMutableArray *)getBeat;
 
 @end
