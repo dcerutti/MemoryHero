@@ -30,8 +30,13 @@
     [library addObject:song];
 }
 
+-(int)getLibrarySize {
+    return [library count];
+}
+
 -(void)firstSong{
     Song *songBuild = [[Song alloc] init];
+    [songBuild setName:@"litz"];
     Note *noteBuild;
     noteBuild = [[Note alloc]set:@"tR" :2.365];
     [songBuild addNote:noteBuild];
