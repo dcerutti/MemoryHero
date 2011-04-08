@@ -1,15 +1,19 @@
 //
-//  MemoryHeroViewController.h
+//  Song.m
 //  MemoryHero
 //
 //  Created by Dan Cerutti on 3/31/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.  Don't forget that this is open source.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+<<<<<<< HEAD
 #import <UIKit/UIKit.h>
+=======
+#import "Song.h"
+>>>>>>> ebe8fe60cc765fa1bbcdef392f2efbcaca5f0976
 
-@class Song;
 
+<<<<<<< HEAD
 @interface MemoryHeroViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     
     IBOutlet UILabel *scoreLabel;
@@ -26,14 +30,37 @@
     
     //Tracker variables
     NSMutableArray *noteImages;
+=======
+@implementation Song
+
+
+-(id)init{
+    beat = [[NSMutableArray alloc] init];
+    name = [[NSString alloc] init];
+    return self;
+}
+
+-(void)addNote:(Note *)note{
+    [beat addObject:note];
+}
+
+-(NSMutableArray *)getBeat{
+    return beat;
+}
+
+-(void)printNotes{
+>>>>>>> ebe8fe60cc765fa1bbcdef392f2efbcaca5f0976
     
-    //temp variables
-    NSMutableArray *usrTurn;
-    Song *currentSong;
-    int beatCount;
+    NSLog(@"Size = %d",[beat count]);
+    for(int i = 0; i < [beat count]; i++){
+        Note *temp = [beat objectAtIndex:i];
+        NSString *str = [temp getButtonRef];
+        NSLog(str);
+    }
     
 }
 
+<<<<<<< HEAD
 -(void)generator;
 -(void)moveNotes;
 
@@ -44,4 +71,19 @@
 -(IBAction)bottomLeftButton;
 -(IBAction)bottomRightButton;
 -(IBAction)songsTouched;
+=======
+-(void)setName:(NSString *)songName{
+    name = songName;
+}
+
+-(NSString *)getName{
+    return name;
+}
+
+-(void)dealloc{
+    [beat release];
+    [super dealloc];
+}
+
+>>>>>>> ebe8fe60cc765fa1bbcdef392f2efbcaca5f0976
 @end
