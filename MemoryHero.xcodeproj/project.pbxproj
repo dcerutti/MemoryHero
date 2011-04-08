@@ -23,8 +23,6 @@
 		3741B188134C35C60029A537 /* yellow_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3741B180134C35C60029A537 /* yellow_btn_down.png */; };
 		3741B189134C35C60029A537 /* yellow_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3741B181134C35C60029A537 /* yellow_btn.png */; };
 		375F1ADB134E3AB10008414A /* NoteImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F1ADA134E3AB10008414A /* NoteImage.m */; };
-		375F1ADE134E64930008414A /* Lisztomania.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 375F1ADD134E64930008414A /* Lisztomania.mp3 */; };
-		375F1AE8134E6DB50008414A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375F1AE7134E6DB40008414A /* AVFoundation.framework */; };
 		3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2971344D00C003F7223 /* UIKit.framework */; };
 		3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2991344D00C003F7223 /* Foundation.framework */; };
 		3798D29C1344D00C003F7223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D29B1344D00C003F7223 /* CoreGraphics.framework */; };
@@ -74,8 +72,6 @@
 		3741B181134C35C60029A537 /* yellow_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_btn.png; sourceTree = "<group>"; };
 		375F1AD9134E3AB00008414A /* NoteImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteImage.h; sourceTree = "<group>"; };
 		375F1ADA134E3AB10008414A /* NoteImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteImage.m; sourceTree = "<group>"; };
-		375F1ADD134E64930008414A /* Lisztomania.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Lisztomania.mp3; sourceTree = "<group>"; };
-		375F1AE7134E6DB40008414A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3798D2931344D00C003F7223 /* MemoryHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3798D2971344D00C003F7223 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3798D2991344D00C003F7223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				375F1AE8134E6DB50008414A /* AVFoundation.framework in Frameworks */,
 				3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */,
 				3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */,
 				3798D29C1344D00C003F7223 /* CoreGraphics.framework in Frameworks */,
@@ -130,7 +125,6 @@
 		3741B16F134C2A100029A537 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				375F1ADD134E64930008414A /* Lisztomania.mp3 */,
 				3741B171134C2A5F0029A537 /* test_notes */,
 			);
 			name = Sounds;
@@ -170,7 +164,6 @@
 		3798D2961344D00C003F7223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				375F1AE7134E6DB40008414A /* AVFoundation.framework */,
 				3798D2971344D00C003F7223 /* UIKit.framework */,
 				3798D2991344D00C003F7223 /* Foundation.framework */,
 				3798D29B1344D00C003F7223 /* CoreGraphics.framework */,
@@ -358,7 +351,6 @@
 				3741B187134C35C60029A537 /* red_btn.png in Resources */,
 				3741B188134C35C60029A537 /* yellow_btn_down.png in Resources */,
 				3741B189134C35C60029A537 /* yellow_btn.png in Resources */,
-				375F1ADE134E64930008414A /* Lisztomania.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +475,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -497,7 +489,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
