@@ -18,5 +18,6 @@
 
 -(Song *)getSong:(NSInteger)index;
 -(void)firstSong;
+-(int)getLibrarySize;
 
 @end

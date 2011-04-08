@@ -14,6 +14,7 @@
 
 -(id)init{
     beat = [[NSMutableArray alloc] init];
+    name = [[NSString alloc] init];
     return self;
 }
 
@@ -34,6 +35,14 @@
         NSLog(str);
     }
     
+}
+
+-(void)setName:(NSString *)songName{
+    name = songName;
+}
+
+-(NSString *)getName{
+    return name;
 }
 
 -(void)dealloc{

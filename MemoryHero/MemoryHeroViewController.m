@@ -11,9 +11,14 @@
 #import "Note.h"
 #import "SongLibrary.h"
 #import "NoteImage.h"
-#import <AVFoundation/AVFoundation.h>
 
 @implementation MemoryHeroViewController
+
+
+-(IBAction)songsTouched{
+    NSLog(@"songsButton");
+    [songListPicker setHidden:![songListPicker isHidden]];
+}
 
 -(IBAction)topLeftButton{
     
@@ -55,6 +60,7 @@
 {
     [super dealloc];
 }
+
 
 -(void)moveNotes{
     
@@ -110,8 +116,6 @@
     
     int count = [noteImages count];
     NSLog(@"DONE = %d",count);
-    sleep(1);
-    [audioPlayer stop];
 }
 
 
@@ -121,7 +125,6 @@
     
     noteImages = [[NSMutableArray alloc]init];
     [NSThread detachNewThreadSelector:@selector(moveNotes) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(playAudio) toTarget:self withObject:nil];
     
     SongLibrary *sL = [[SongLibrary alloc]init];
     Song *litz = [sL getSong:0];
@@ -137,8 +140,6 @@
         
         NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
         NSTimeInterval totalTime = nowTime - startTime;
-    
-
         
         float sleepTime = timeBeat - totalTime;
         [NSThread sleepForTimeInterval:sleepTime];
@@ -160,23 +161,16 @@
     [pool release];
 }
 
--(void)playAudio{
-    
-    [NSThread sleepForTimeInterval:3.7];
-    
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Lisztomania.mp3", [[NSBundle mainBundle] resourcePath]]];
-    
-    NSError *error;
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    audioPlayer.numberOfLoops = 0;
-    
-    if (audioPlayer == nil)
-        NSLog([error description]);
-    else
-        [audioPlayer play];
-}
-
 -(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    [songListPicker setHidden:YES];
+    SongLibrary *sL = [[SongLibrary alloc] init];
+    songList = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [sL getLibrarySize]; i++) {
+        NSString *str = [[sL getSong:(i)]getName];
+        [songList addObject:str];   
+    }
     
     [NSThread detachNewThreadSelector:@selector(generator) toTarget:self withObject:nil];
     
@@ -184,6 +178,27 @@
     [NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
     scoreLabel.text = @"0";
     
+}
+
+
+// PICKER VIEW METHODS
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerVie
+{
+	return 1;  // # columns
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component 
+{ 
+	return [songList count];  // # rows
+    
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component { 
+	return [songList objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    // WHAT TO DO WHEN A SONG IS CHOSEN???
 }
 
 //Play First Measure
