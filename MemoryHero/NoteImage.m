@@ -10,7 +10,7 @@
 
 
 @implementation NoteImage
-@synthesize image,didFinish,isLastNote;
+@synthesize image,didFinish,isLastNote,note;
 
 -(id)init{
     didFinish = false;

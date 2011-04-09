@@ -8,16 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class Note;
 
 @interface NoteImage : NSObject {
     
     UIImageView *image;
+    Note *note;
     BOOL didFinsh;
     BOOL isLastNote;
     
 }
 
 @property (nonatomic, retain)UIImageView *image;
+@property (nonatomic, retain)Note *note;
 @property (nonatomic) BOOL didFinish;
 @property (nonatomic) BOOL isLastNote;
 

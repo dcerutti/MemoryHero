@@ -11,6 +11,7 @@
 #import "Note.h"
 #import "SongLibrary.h"
 #import "NoteImage.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation MemoryHeroViewController
 
@@ -89,6 +90,22 @@
                         [image removeFromSuperview];
                         temp.didFinish = true;
                         
+                        NSString *str = [temp.note getButtonRef];
+                        NSLog(str);
+                        UIButton *button;
+                        
+                        if(str == @"tR"){
+                            button = tRButton;
+                        }else if(str == @"tL"){
+                            button = tLButton;
+                        }else if(str == @"bL"){
+                            button = bLButton;
+                        }else if(str == @"bR"){
+                            button = bRButton;
+                        }
+                        
+                         [NSThread detachNewThreadSelector:@selector(buttonFlicker:) toTarget:self withObject:button];
+                        
                     });
                     
                     if(temp.isLastNote){
@@ -116,6 +133,8 @@
     
     int count = [noteImages count];
     NSLog(@"DONE = %d",count);
+    sleep(1);
+    [audioPlayer stop];
 }
 
 
@@ -125,6 +144,7 @@
     
     noteImages = [[NSMutableArray alloc]init];
     [NSThread detachNewThreadSelector:@selector(moveNotes) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(playAudio) toTarget:self withObject:nil];
     
     SongLibrary *sL = [[SongLibrary alloc]init];
     Song *litz = [sL getSong:0];
@@ -147,6 +167,7 @@
         dispatch_async( dispatch_get_main_queue(), ^{
             
             NoteImage *temp = [[NoteImage alloc]init];
+            temp.note = noteNow;
             [self.view addSubview:temp.image];
             [noteImages addObject:temp];
             
@@ -175,9 +196,43 @@
     [NSThread detachNewThreadSelector:@selector(generator) toTarget:self withObject:nil];
     
     //Creates a new thread so program can continue
-    [NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
+    //[NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
     scoreLabel.text = @"0";
     
+}
+
+-(void)buttonFlicker:(UIButton *)button{
+    
+    dispatch_async( dispatch_get_main_queue(), ^{
+        [button setHighlighted:TRUE];
+    });
+    
+    [NSThread sleepForTimeInterval:.1];
+    
+    dispatch_async( dispatch_get_main_queue(), ^{
+        [button setHighlighted:FALSE];
+    });
+    
+    
+}
+
+-(void)playAudio{
+    
+    [NSThread sleepForTimeInterval:3.7];
+    
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Lisztomania.mp3", [[NSBundle mainBundle] resourcePath]]];
+
+    NSError *error;
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    audioPlayer.numberOfLoops = 0;
+    if (audioPlayer == nil)
+        
+        NSLog([error description]);
+    
+    else
+        [audioPlayer play];
 }
 
 
