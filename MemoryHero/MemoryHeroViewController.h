@@ -22,6 +22,8 @@
     IBOutlet UIPickerView *songListPicker;
     IBOutlet UIButton *songListButton;
     
+    // Global time for music and notes to sync
+    NSTimeInterval globalTime;
     //Song List variables
     NSMutableArray *songList;
     
@@ -36,7 +38,8 @@
     
 }
 
--(void)generator;
+-(void)cpuNoteImagesGenerator;
+-(void)usrNoteImagesGenerator;
 -(void)moveNotes;
 -(void)playAudio;
 -(void)buttonFlicker:(UIButton *)button;
