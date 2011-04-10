@@ -14,15 +14,13 @@
     
     NSMutableArray *beat;
     NSString *name;
-    double beatsPerMeasure;
+    
 }
 
 -(void)addNote:(Note *)note;
 -(void)printNotes;
 -(void)setName:(NSString *)songName;
 -(NSString *)getName;
--(void)setBeatsPerMeasure:(int)tempBeatsPerMeasure;
--(int)getBeatsPerMeasure;
 -(NSMutableArray *)getBeat;
 
 @end

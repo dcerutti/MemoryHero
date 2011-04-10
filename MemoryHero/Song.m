@@ -45,13 +45,6 @@
     return name;
 }
 
--(void)setBeatsPerMeasure:(int) tempBeatsPerMeasure {
-    beatsPerMeasure = tempBeatsPerMeasure;
-}
-
--(int)getBeatsPerMeasure{
-    return beatsPerMeasure;
-}
 -(void)dealloc{
     [beat release];
     [super dealloc];
