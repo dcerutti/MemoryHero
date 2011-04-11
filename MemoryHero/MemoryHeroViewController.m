@@ -22,83 +22,30 @@
     [songListPicker setHidden:![songListPicker isHidden]];
 }
 
-//-(IBAction)topLeftbutton{
-//    NSLog(@"topLEFT");
-//    [usrTurn addObject:@"tL"];
-//    beatCount++;
-//}
-
-//-(IBAction)topRightButton{
-//    NSLog(@"topRight");
-//    [usrTurn addObject:@"tR"];
-//    beatCount++;
-//}
-
-//-(IBAction)bottomLeftButton{
-//    NSLog(@"bottomLeft");
-//    [usrTurn addObject:@"bL"];
-//    beatCount++;
-//}
-
-//-(IBAction)bottomRightButton{
-//    NSLog(@"bottomRight");
-//    [usrTurn addObject:@"bR"];
-//    beatCount++;
-//}
-
--(IBAction)topLeftButton{
-    
+-(IBAction)topLeftbutton{
     NSLog(@"topLEFT");
-    
-    SystemSoundID topLeftSound;
-    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"TopLeft" ofType:@"wav"]], &topLeftSound);
-    AudioServicesPlaySystemSound (topLeftSound);
-    
     [usrTurn addObject:@"tL"];
     beatCount++;
-    
 }
 
 -(IBAction)topRightButton{
-    
     NSLog(@"topRight");
-    
-    SystemSoundID topRightSound;
-    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"TopRight" ofType:@"wav"]], &topRightSound);
-    AudioServicesPlaySystemSound (topRightSound);
-    
     [usrTurn addObject:@"tR"];
     beatCount++;
-    
 }
 
 -(IBAction)bottomLeftButton{
-    
     NSLog(@"bottomLeft");
-    
-    SystemSoundID bottomLeftSound;
-    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"BottomLeft" ofType:@"wav"]], &bottomLeftSound);
-    AudioServicesPlaySystemSound (bottomLeftSound);
-    
     [usrTurn addObject:@"bL"];
     beatCount++;
-    
-    
 }
 
 -(IBAction)bottomRightButton{
-    
     NSLog(@"bottomRight");
-    
-    SystemSoundID bottomRightSound;
-    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"BottomRight" ofType:@"wav"]], &bottomRightSound);
-    AudioServicesPlaySystemSound (bottomRightSound);
-    
     [usrTurn addObject:@"bR"];
     beatCount++;
-    
-    
 }
+
 
 - (void)dealloc
 {
@@ -183,61 +130,17 @@
 }
 
 
-//-(void)generator{
-//    
-//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-//    
-//    noteImages = [[NSMutableArray alloc]init];
-//    [NSThread detachNewThreadSelector:@selector(moveNotes) toTarget:self withObject:nil];
-//    [NSThread detachNewThreadSelector:@selector(playAudio) toTarget:self withObject:nil];
-//    
-//    SongLibrary *sL = [[SongLibrary alloc]init];
-//    Song *litz = [sL getSong:0];
-//    NSMutableArray *beats = [litz getBeat];
-//    int count = [beats count];
-//    
-//    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
-//    
-//    for(int i = 0; i < count; i++){
-//        
-//        Note *noteNow = [beats objectAtIndex:i];
-//        float timeBeat = noteNow.timeStamp + 1.5;
-//        
-//        NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
-//        NSTimeInterval totalTime = nowTime - startTime;
-//        
-//        float sleepTime = timeBeat - totalTime;
-//        [NSThread sleepForTimeInterval:sleepTime];
-//        
-//        dispatch_async( dispatch_get_main_queue(), ^{
-//            
-//            NoteImage *temp = [[NoteImage alloc]init];
-//            temp.note = noteNow;
-//            [self.view addSubview:temp.image];
-//            [noteImages addObject:temp];
-//            
-//            if(i == count - 1){
-//                temp.isLastNote = true;
-//            }
-//            
-//        });
-//        
-//    }
-//    
-//    [pool release];
-//}
-
-
--(void)cpuNoteImagesGenerator{
+-(void)generator{
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
     noteImages = [[NSMutableArray alloc]init];
     [NSThread detachNewThreadSelector:@selector(moveNotes) toTarget:self withObject:nil];
     [NSThread detachNewThreadSelector:@selector(playAudio) toTarget:self withObject:nil];
+    
     SongLibrary *sL = [[SongLibrary alloc]init];
-    Song *song = [sL getSong:2];
-    NSMutableArray *beats = [song getBeat];
+    Song *jack = [sL getSong:1];
+    NSMutableArray *beats = [jack getBeat];
     int count = [beats count];
     
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
@@ -245,7 +148,8 @@
     for(int i = 0; i < count; i++){
         
         Note *noteNow = [beats objectAtIndex:i];
-        float timeBeat = noteNow.timeStamp;
+        float timeBeat = noteNow.timeStamp + 1.5;
+        
         NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
         NSTimeInterval totalTime = nowTime - startTime;
         
@@ -255,41 +159,6 @@
         dispatch_async( dispatch_get_main_queue(), ^{
             
             NoteImage *temp = [[NoteImage alloc]init];
-            temp.isUserNote = false;
-            temp.note = noteNow;
-            [self.view addSubview:temp.image];
-            [noteImages addObject:temp];
-            
-        });
-        
-    }
-    [pool release];
-}
-
--(void)usrNoteImagesGenerator {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    noteImages = [[NSMutableArray alloc]init];
-    SongLibrary *sL = [[SongLibrary alloc]init];
-    Song *song = [sL getSong:2];
-    NSMutableArray *beats = [song getBeat];
-    int count = [beats count];
-    
-    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
-    
-    for(int i = 0; i < count; i++){
-        
-        Note *noteNow = [beats objectAtIndex:i];
-        float timeBeat = noteNow.timeStamp + [song getBeatsPerMeasure];
-        NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
-        NSTimeInterval totalTime = nowTime - startTime;
-        
-        float sleepTime = timeBeat - totalTime;
-        [NSThread sleepForTimeInterval:sleepTime];
-        
-        dispatch_async( dispatch_get_main_queue(), ^{
-            
-            NoteImage *temp = [[NoteImage alloc]init];
-            temp.isUserNote = true;
             temp.note = noteNow;
             [self.view addSubview:temp.image];
             [noteImages addObject:temp];
@@ -304,7 +173,6 @@
     
     [pool release];
 }
-
 
 
 -(void)viewDidLoad{
@@ -323,35 +191,14 @@
         [songList addObject:str];   
     }
     
-    //[NSThread detachNewThreadSelector:@selector(generator) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(cpuNoteImagesGenerator) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(usrNoteImagesGenerator) toTarget:self withObject:nil];
-
-    //Creates a new thread so program can continue
-    //[NSThread detachNewThreadSelector:@selector(goSong) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(generator) toTarget:self withObject:nil];
     scoreLabel.text = @"0";
     
 }
 
-//-(void)buttonFlicker:(UIButton *)button{
-//    
-//    dispatch_async( dispatch_get_main_queue(), ^{
-//        [button setHighlighted:TRUE];
-//    });
-//    
-//    [NSThread sleepForTimeInterval:.3];
-//    
-//    dispatch_async( dispatch_get_main_queue(), ^{
-//        [button setHighlighted:FALSE];
-//    });
-//    
-//}
 
 -(void)buttonFlicker:(UIButton *)button{
     
-    SystemSoundID sound;
-    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[button currentTitle] ofType:@"wav"]], &sound);
-    AudioServicesPlaySystemSound (sound);
     
     dispatch_async( dispatch_get_main_queue(), ^{
         [button setHighlighted:TRUE];
@@ -375,7 +222,7 @@
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     [audioPlayer prepareToPlay];
     
-    [NSThread sleepForTimeInterval:4.8];
+    //[NSThread sleepForTimeInterval:4.8];
     audioPlayer.numberOfLoops = 0;
     if (audioPlayer == nil)
         

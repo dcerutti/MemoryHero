@@ -35,8 +35,7 @@
     int beatCount;
     
 }
--(void)usrNoteImagesGenerator;
--(void)cpuNoteImagesGenerator;
+
 -(void)generator;
 -(void)moveNotes;
 -(void)playAudio;
