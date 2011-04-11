@@ -45,6 +45,14 @@
     return name;
 }
 
+-(void)setBeatsPerMeasure:(int)numberOfBeats {
+    beatsPerMeasure = numberOfBeats / 2;
+}
+
+-(NSInteger)getBeatsPerMeasure {
+    return beatsPerMeasure;
+}
+
 -(void)dealloc{
     [beat release];
     [super dealloc];

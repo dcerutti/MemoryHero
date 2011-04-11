@@ -10,11 +10,12 @@
 
 
 @implementation NoteImage
-@synthesize image,didFinish,isLastNote,note;
+@synthesize image,didFinish,isLastNote,isUserNote,note;
 
 -(id)init{
     didFinish = false;
     isLastNote = false;
+    isUserNote = false;
     CGRect myImageRect = CGRectMake(310,183, 20.0f, 20.0f); 
     image = [[UIImageView alloc] initWithFrame:myImageRect];
     [image setImage:[UIImage imageNamed:@"circle.png"]];

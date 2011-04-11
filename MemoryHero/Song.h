@@ -14,6 +14,7 @@
     
     NSMutableArray *beat;
     NSString *name;
+    int beatsPerMeasure;
     
 }
 
@@ -22,5 +23,6 @@
 -(void)setName:(NSString *)songName;
 -(NSString *)getName;
 -(NSMutableArray *)getBeat;
-
+-(void)setBeatsPerMeasure:(int)numberOfBeats;
+-(NSInteger)getBeatsPerMeasure;
 @end

@@ -23,6 +23,8 @@
 -(Note *) set:(NSString *)buttonRef;
 -(Note *) set:(NSString *)buttonRef:(double)time;
 -(NSString *)getButtonRef;
+-(void)setTime:(float)time;
+-(float)getTime;
 
 
 @end

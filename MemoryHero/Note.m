@@ -31,6 +31,14 @@
     return button;
 }
 
+-(void)setTime:(float)time {
+    timeStamp = time;
+}
+
+-(float)getTime {
+    return timeStamp;
+}
+
 -(void)dealloc{
     [button release];
     [super dealloc];

@@ -18,6 +18,7 @@
 
 -(Song *)getSong:(NSInteger)index;
 -(void)firstSong;
+-(void)secondSong;
+-(void)randomSong;
 -(int)getLibrarySize;
-
 @end

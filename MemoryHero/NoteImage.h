@@ -16,14 +16,14 @@
     Note *note;
     BOOL didFinsh;
     BOOL isLastNote;
-    
+    BOOL isUserNote;
 }
 
 @property (nonatomic, retain)UIImageView *image;
 @property (nonatomic, retain)Note *note;
 @property (nonatomic) BOOL didFinish;
 @property (nonatomic) BOOL isLastNote;
-
+@property (nonatomic) BOOL isUserNote;
 -(void)changePicture:(NSString *)pic;
 
 @end

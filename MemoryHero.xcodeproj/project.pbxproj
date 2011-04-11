@@ -12,10 +12,10 @@
 		37133D72134AE2F50032A94F /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 37133D71134AE2F50032A94F /* circle.png */; };
 		371C0F4D134FFA7300BD3CDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371C0F4C134FFA7300BD3CDB /* AVFoundation.framework */; };
 		37300284134FF9D500711345 /* Lisztomania.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37300283134FF9D500711345 /* Lisztomania.mp3 */; };
-		3741B176134C2A5F0029A537 /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B172134C2A5F0029A537 /* C.wav */; };
-		3741B177134C2A5F0029A537 /* E.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B173134C2A5F0029A537 /* E.wav */; };
-		3741B178134C2A5F0029A537 /* G.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B174134C2A5F0029A537 /* G.wav */; };
-		3741B179134C2A5F0029A537 /* High-C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B175134C2A5F0029A537 /* High-C.wav */; };
+		3741B176134C2A5F0029A537 /* TopLeft.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B172134C2A5F0029A537 /* TopLeft.wav */; };
+		3741B177134C2A5F0029A537 /* TopRight.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B173134C2A5F0029A537 /* TopRight.wav */; };
+		3741B178134C2A5F0029A537 /* BottomLeft.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B174134C2A5F0029A537 /* BottomLeft.wav */; };
+		3741B179134C2A5F0029A537 /* BottomRight.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3741B175134C2A5F0029A537 /* BottomRight.wav */; };
 		3741B182134C35C60029A537 /* blue_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3741B17A134C35C60029A537 /* blue_btn_down.png */; };
 		3741B183134C35C60029A537 /* blue_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3741B17B134C35C60029A537 /* blue_btn.png */; };
 		3741B184134C35C60029A537 /* green_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3741B17C134C35C60029A537 /* green_btn_down.png */; };
@@ -42,6 +42,8 @@
 		3798D2C71344D00C003F7223 /* MemoryHeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798D2C61344D00C003F7223 /* MemoryHeroTests.m */; };
 		37A1B7EC134E13510067414E /* MemoryHeroSongBuilder.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A1B7EB134E13510067414E /* MemoryHeroSongBuilder.jar */; };
 		37FFA536134A1C7D0089C11E /* SongLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFA535134A1C7D0089C11E /* SongLibrary.m */; };
+		E974CD811352A61D00A31C1B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E974CD801352A61D00A31C1B /* AudioToolbox.framework */; };
+		E974CD831352C88400A31C1B /* BG - Jack One.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E974CD821352C88400A31C1B /* BG - Jack One.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +64,10 @@
 		37133D71134AE2F50032A94F /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		371C0F4C134FFA7300BD3CDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		37300283134FF9D500711345 /* Lisztomania.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Lisztomania.mp3; sourceTree = "<group>"; };
-		3741B172134C2A5F0029A537 /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C.wav; sourceTree = "<group>"; };
-		3741B173134C2A5F0029A537 /* E.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = E.wav; sourceTree = "<group>"; };
-		3741B174134C2A5F0029A537 /* G.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G.wav; sourceTree = "<group>"; };
-		3741B175134C2A5F0029A537 /* High-C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "High-C.wav"; sourceTree = "<group>"; };
+		3741B172134C2A5F0029A537 /* TopLeft.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = TopLeft.wav; path = test_notes/TopLeft.wav; sourceTree = "<group>"; };
+		3741B173134C2A5F0029A537 /* TopRight.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = TopRight.wav; path = test_notes/TopRight.wav; sourceTree = "<group>"; };
+		3741B174134C2A5F0029A537 /* BottomLeft.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = BottomLeft.wav; path = test_notes/BottomLeft.wav; sourceTree = "<group>"; };
+		3741B175134C2A5F0029A537 /* BottomRight.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = BottomRight.wav; path = test_notes/BottomRight.wav; sourceTree = "<group>"; };
 		3741B17A134C35C60029A537 /* blue_btn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_btn_down.png; sourceTree = "<group>"; };
 		3741B17B134C35C60029A537 /* blue_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_btn.png; sourceTree = "<group>"; };
 		3741B17C134C35C60029A537 /* green_btn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_btn_down.png; sourceTree = "<group>"; };
@@ -99,6 +101,8 @@
 		37A1B7EB134E13510067414E /* MemoryHeroSongBuilder.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = MemoryHeroSongBuilder.jar; sourceTree = "<group>"; };
 		37FFA534134A1C7D0089C11E /* SongLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongLibrary.h; sourceTree = "<group>"; };
 		37FFA535134A1C7D0089C11E /* SongLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongLibrary.m; sourceTree = "<group>"; };
+		E974CD801352A61D00A31C1B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E974CD821352C88400A31C1B /* BG - Jack One.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "BG - Jack One.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E974CD811352A61D00A31C1B /* AudioToolbox.framework in Frameworks */,
 				371C0F4D134FFA7300BD3CDB /* AVFoundation.framework in Frameworks */,
 				3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */,
 				3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */,
@@ -130,6 +135,11 @@
 		3741B16F134C2A100029A537 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				E974CD821352C88400A31C1B /* BG - Jack One.mp3 */,
+				3741B172134C2A5F0029A537 /* TopLeft.wav */,
+				3741B173134C2A5F0029A537 /* TopRight.wav */,
+				3741B174134C2A5F0029A537 /* BottomLeft.wav */,
+				3741B175134C2A5F0029A537 /* BottomRight.wav */,
 				37300283134FF9D500711345 /* Lisztomania.mp3 */,
 				3741B171134C2A5F0029A537 /* test_notes */,
 			);
@@ -139,10 +149,6 @@
 		3741B171134C2A5F0029A537 /* test_notes */ = {
 			isa = PBXGroup;
 			children = (
-				3741B172134C2A5F0029A537 /* C.wav */,
-				3741B173134C2A5F0029A537 /* E.wav */,
-				3741B174134C2A5F0029A537 /* G.wav */,
-				3741B175134C2A5F0029A537 /* High-C.wav */,
 			);
 			path = test_notes;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 		3798D2961344D00C003F7223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E974CD801352A61D00A31C1B /* AudioToolbox.framework */,
 				371C0F4C134FFA7300BD3CDB /* AVFoundation.framework */,
 				3798D2971344D00C003F7223 /* UIKit.framework */,
 				3798D2991344D00C003F7223 /* Foundation.framework */,
@@ -346,10 +353,10 @@
 				3798D2AB1344D00C003F7223 /* MainWindow.xib in Resources */,
 				3798D2B11344D00C003F7223 /* MemoryHeroViewController.xib in Resources */,
 				37133D72134AE2F50032A94F /* circle.png in Resources */,
-				3741B176134C2A5F0029A537 /* C.wav in Resources */,
-				3741B177134C2A5F0029A537 /* E.wav in Resources */,
-				3741B178134C2A5F0029A537 /* G.wav in Resources */,
-				3741B179134C2A5F0029A537 /* High-C.wav in Resources */,
+				3741B176134C2A5F0029A537 /* TopLeft.wav in Resources */,
+				3741B177134C2A5F0029A537 /* TopRight.wav in Resources */,
+				3741B178134C2A5F0029A537 /* BottomLeft.wav in Resources */,
+				3741B179134C2A5F0029A537 /* BottomRight.wav in Resources */,
 				3741B182134C35C60029A537 /* blue_btn_down.png in Resources */,
 				3741B183134C35C60029A537 /* blue_btn.png in Resources */,
 				3741B184134C35C60029A537 /* green_btn_down.png in Resources */,
@@ -359,6 +366,7 @@
 				3741B188134C35C60029A537 /* yellow_btn_down.png in Resources */,
 				3741B189134C35C60029A537 /* yellow_btn.png in Resources */,
 				37300284134FF9D500711345 /* Lisztomania.mp3 in Resources */,
+				E974CD831352C88400A31C1B /* BG - Jack One.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
