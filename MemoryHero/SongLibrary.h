@@ -20,5 +20,6 @@
 -(void)firstSong;
 -(void)secondSong;
 -(void)randomSong;
+-(void)bestShot;
 -(int)getLibrarySize;
 @end

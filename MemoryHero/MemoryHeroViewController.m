@@ -77,6 +77,9 @@
                     
                     dispatch_async( dispatch_get_main_queue(), ^{
                         
+                        NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
+                        NSTimeInterval totalTime = nowTime - startTime;
+                        
                         [image removeFromSuperview];
                         temp.didFinish = true;
                         
@@ -94,7 +97,7 @@
                             button = bRButton;
                         }
                         
-                        if (!temp.isUserNote) {
+                        if (!temp.note.isUSR) {
                             [NSThread detachNewThreadSelector:@selector(buttonFlicker:) toTarget:self withObject:button];
                         }
                         
@@ -123,6 +126,7 @@
         
     }//end while
     
+    songDone = TRUE;
     int count = [noteImages count];
     NSLog(@"DONE = %d",count);
     sleep(1);
@@ -130,20 +134,21 @@
 }
 
 
--(void)generator{
+-(void)imageNoteGenerator{
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
+    songDone =  false;
     noteImages = [[NSMutableArray alloc]init];
     [NSThread detachNewThreadSelector:@selector(moveNotes) toTarget:self withObject:nil];
     [NSThread detachNewThreadSelector:@selector(playAudio) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(usrInput) toTarget:self withObject:nil];
     
-    SongLibrary *sL = [[SongLibrary alloc]init];
-    Song *jack = [sL getSong:1];
-    NSMutableArray *beats = [jack getBeat];
+    songLibrary = [[SongLibrary alloc]init];
+    Song *bestShot = [songLibrary getSong:3];
+    NSMutableArray *beats = [bestShot getBeat];
     int count = [beats count];
     
-    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
+    startTime = [NSDate timeIntervalSinceReferenceDate];
     
     for(int i = 0; i < count; i++){
         
@@ -160,6 +165,23 @@
             
             NoteImage *temp = [[NoteImage alloc]init];
             temp.note = noteNow;
+            if([temp.note getButtonRef] == @"tR"){
+                [temp changePicture:@"blueNote.png"];
+            }else if([temp.note getButtonRef] == @"tL"){
+                [temp changePicture:@"redNote.png"];
+            }else if([temp.note getButtonRef] == @"bL"){
+                [temp changePicture:@"greenNote.png"];
+            }else if([temp.note getButtonRef] == @"bR"){
+                [temp changePicture:@"yellowNote.png"];
+            }
+            
+            if(temp.note.isUSR){
+               [temp changePicture:@"whiteNote.png"];
+                //status.text = @"GO!";
+            }else{
+                //status.text = @"REMEMBER!";
+            }
+            
             [self.view addSubview:temp.image];
             [noteImages addObject:temp];
             
@@ -174,11 +196,87 @@
     [pool release];
 }
 
+-(void)usrInput{
+    usrTurn = [[NSMutableArray alloc]init];
+    NSMutableArray *usrReference = [[NSMutableArray alloc]init];
+    Song *bestShot = [songLibrary getSong:3];//to hardcoded.
+    NSMutableArray *beat = [bestShot getBeat];
+    beatCount = -1;
+    NSString *strUsr;
+    NSString *strCS;
+    Note *csNote;
+    int score = 0;//temp
+    
+    //pulls only the notes that the user is responsible for
+    for(Note *note in beat){
+        if(note.isUSR){
+            [usrReference addObject:note];
+        }
+    }
+    
+    while(!songDone){
+        
+        //right now it waits for u to match pattern but it will eventually wait based on time.
+        if(beatCount != -1){
+            
+            sleep(.1);
+            strUsr = [usrTurn objectAtIndex:beatCount];
+            strCS = [[usrReference objectAtIndex:beatCount] getButtonRef];
+            csNote = [usrReference objectAtIndex:beatCount];
+            
+            
+            if(!csNote.didCheck){
+                
+                csNote.didCheck = TRUE;
+                
+                NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
+                NSTimeInterval totalTime = nowTime - startTime;
+                if(strUsr == strCS){
+                    
+                    double pressDown = fabs(csNote.timeStamp + 3.0 - totalTime);
+                    
+                    NSLog(@"PRESSDOWN DIFF = %f",pressDown);
+                    
+                    if(pressDown < .2){
+                    score++;
+                    dispatch_async( dispatch_get_main_queue(), ^{
+                        status.text = @"Great!";
+                        //Everytime a button is correctly hit, score increases by 300. We can change increment later if we like especially when it comes to the beat
+                        int scoreboard = 0;
+                        scoreboard = score * 300;
+                        scoreLabel.text = [NSString stringWithFormat:@"%d",scoreboard];
+                        
+                    });
+                        
+                    }
+                    
+                }else{
+                    
+                    dispatch_async( dispatch_get_main_queue(), ^{
+                        status.text = @"BAD!";
+                        //Everytime a button is correctly hit, score increases by 300. We can change increment later if we like especially when it comes to the beat
+                        int scoreboard = 0;
+                        scoreboard = score * 300;
+                        scoreLabel.text = [NSString stringWithFormat:@"%d",scoreboard];
+                    });
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    [usrReference release];
+}
+
 
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/BG - Jack One.mp3", [[NSBundle mainBundle] resourcePath]]];
+    songLibrary = [[SongLibrary alloc]init];
+    
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bestShot.wav", [[NSBundle mainBundle] resourcePath]]];
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     [audioPlayer prepareToPlay];
@@ -191,7 +289,7 @@
         [songList addObject:str];   
     }
     
-    [NSThread detachNewThreadSelector:@selector(generator) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(imageNoteGenerator) toTarget:self withObject:nil];
     scoreLabel.text = @"0";
     
 }
@@ -204,7 +302,7 @@
         [button setHighlighted:TRUE];
     });
     
-    [NSThread sleepForTimeInterval:.3];
+    [NSThread sleepForTimeInterval:.1];
     
     dispatch_async( dispatch_get_main_queue(), ^{
         [button setHighlighted:FALSE];
@@ -214,10 +312,10 @@
 }
 
 -(void)playAudio{
-    [NSThread sleepForTimeInterval:1.9];
+    [NSThread sleepForTimeInterval:2.9];
     NSError *error;
     
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/BG - Jack One.mp3", [[NSBundle mainBundle] resourcePath]]];
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bestShot.wav", [[NSBundle mainBundle] resourcePath]]];
     
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     [audioPlayer prepareToPlay];
@@ -262,6 +360,7 @@
         status.text = @"wait";
         
     });
+
     
     Song *firstSong = [[Song alloc] init];
     Note *firstNote;

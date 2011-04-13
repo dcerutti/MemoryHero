@@ -10,7 +10,14 @@
 
 
 @implementation Note
-@synthesize didCheck,timeStamp;
+@synthesize didCheck,timeStamp,isUSR;
+
+-(Note *)set:(NSString *)buttonRef :(double)time :(BOOL)isUSER{
+    button = buttonRef;
+    timeStamp = time;
+    isUSR = isUSER;
+    return self;
+}
 
 -(Note *)set:(NSString *)buttonRef{
     

@@ -13,15 +13,17 @@
     
     NSString *button;
     double timeStamp;
-    BOOL didCheck,lastNote;
+    BOOL isUSR,didCheck,lastNote;
     
 }
 
+@property (nonatomic)BOOL isUSR;
 @property (nonatomic)BOOL didCheck;
 @property (nonatomic)double timeStamp;
 
 -(Note *) set:(NSString *)buttonRef;
 -(Note *) set:(NSString *)buttonRef:(double)time;
+-(Note *) set:(NSString *)buttonRef:(double)time:(BOOL)isUSER;
 -(NSString *)getButtonRef;
 -(void)setTime:(float)time;
 -(float)getTime;

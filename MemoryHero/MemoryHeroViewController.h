@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@class Song;
+@class Song,SongLibrary;
 
 @interface MemoryHeroViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     
@@ -21,6 +21,10 @@
     IBOutlet UILabel *status;
     IBOutlet UIPickerView *songListPicker;
     IBOutlet UIButton *songListButton;
+    NSTimeInterval startTime;
+    
+    //Song Library
+    SongLibrary *songLibrary;
     
     //Song List variables
     NSMutableArray *songList;
@@ -30,16 +34,18 @@
     AVAudioPlayer *audioPlayer;
     
     //temp variables
+    BOOL songDone;
     NSMutableArray *usrTurn;
     Song *currentSong;
     int beatCount;
     
 }
 
--(void)generator;
+-(void)imageNoteGenerator;
 -(void)moveNotes;
 -(void)playAudio;
 -(void)buttonFlicker:(UIButton *)button;
+-(void)usrInput;
 
 -(void)goSong;
 -(void)usrTurn;

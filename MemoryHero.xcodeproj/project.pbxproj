@@ -41,6 +41,12 @@
 		3798D2C51344D00C003F7223 /* MemoryHeroTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 3798D2C41344D00C003F7223 /* MemoryHeroTests.h */; };
 		3798D2C71344D00C003F7223 /* MemoryHeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798D2C61344D00C003F7223 /* MemoryHeroTests.m */; };
 		37A1B7EC134E13510067414E /* MemoryHeroSongBuilder.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A1B7EB134E13510067414E /* MemoryHeroSongBuilder.jar */; };
+		37C9C0A0135572B600119758 /* bestShot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C09F135572B600119758 /* bestShot.wav */; };
+		37C9C0A71355765800119758 /* blueNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C0A21355765800119758 /* blueNote.png */; };
+		37C9C0A81355765800119758 /* greenNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C0A31355765800119758 /* greenNote.png */; };
+		37C9C0A91355765800119758 /* redNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C0A41355765800119758 /* redNote.png */; };
+		37C9C0AA1355765800119758 /* whiteNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C0A51355765800119758 /* whiteNote.png */; };
+		37C9C0AB1355765800119758 /* yellowNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C0A61355765800119758 /* yellowNote.png */; };
 		37FFA536134A1C7D0089C11E /* SongLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFA535134A1C7D0089C11E /* SongLibrary.m */; };
 		E974CD811352A61D00A31C1B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E974CD801352A61D00A31C1B /* AudioToolbox.framework */; };
 		E974CD831352C88400A31C1B /* BG - Jack One.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E974CD821352C88400A31C1B /* BG - Jack One.mp3 */; };
@@ -99,6 +105,12 @@
 		3798D2C41344D00C003F7223 /* MemoryHeroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryHeroTests.h; sourceTree = "<group>"; };
 		3798D2C61344D00C003F7223 /* MemoryHeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryHeroTests.m; sourceTree = "<group>"; };
 		37A1B7EB134E13510067414E /* MemoryHeroSongBuilder.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = MemoryHeroSongBuilder.jar; sourceTree = "<group>"; };
+		37C9C09F135572B600119758 /* bestShot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bestShot.wav; sourceTree = "<group>"; };
+		37C9C0A21355765800119758 /* blueNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueNote.png; sourceTree = "<group>"; };
+		37C9C0A31355765800119758 /* greenNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenNote.png; sourceTree = "<group>"; };
+		37C9C0A41355765800119758 /* redNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redNote.png; sourceTree = "<group>"; };
+		37C9C0A51355765800119758 /* whiteNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteNote.png; sourceTree = "<group>"; };
+		37C9C0A61355765800119758 /* yellowNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowNote.png; sourceTree = "<group>"; };
 		37FFA534134A1C7D0089C11E /* SongLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongLibrary.h; sourceTree = "<group>"; };
 		37FFA535134A1C7D0089C11E /* SongLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongLibrary.m; sourceTree = "<group>"; };
 		E974CD801352A61D00A31C1B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -135,6 +147,7 @@
 		3741B16F134C2A100029A537 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				37C9C09F135572B600119758 /* bestShot.wav */,
 				E974CD821352C88400A31C1B /* BG - Jack One.mp3 */,
 				3741B172134C2A5F0029A537 /* TopLeft.wav */,
 				3741B173134C2A5F0029A537 /* TopRight.wav */,
@@ -268,6 +281,11 @@
 		37F17AAF1344D03E00248097 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				37C9C0A21355765800119758 /* blueNote.png */,
+				37C9C0A31355765800119758 /* greenNote.png */,
+				37C9C0A41355765800119758 /* redNote.png */,
+				37C9C0A51355765800119758 /* whiteNote.png */,
+				37C9C0A61355765800119758 /* yellowNote.png */,
 				3741B17A134C35C60029A537 /* blue_btn_down.png */,
 				3741B17B134C35C60029A537 /* blue_btn.png */,
 				3741B17C134C35C60029A537 /* green_btn_down.png */,
@@ -367,6 +385,12 @@
 				3741B189134C35C60029A537 /* yellow_btn.png in Resources */,
 				37300284134FF9D500711345 /* Lisztomania.mp3 in Resources */,
 				E974CD831352C88400A31C1B /* BG - Jack One.mp3 in Resources */,
+				37C9C0A0135572B600119758 /* bestShot.wav in Resources */,
+				37C9C0A71355765800119758 /* blueNote.png in Resources */,
+				37C9C0A81355765800119758 /* greenNote.png in Resources */,
+				37C9C0A91355765800119758 /* redNote.png in Resources */,
+				37C9C0AA1355765800119758 /* whiteNote.png in Resources */,
+				37C9C0AB1355765800119758 /* yellowNote.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

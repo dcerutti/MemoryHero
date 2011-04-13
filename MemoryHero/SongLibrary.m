@@ -16,6 +16,7 @@
     [self firstSong];
     [self secondSong];
     [self randomSong];
+    [self bestShot];
     return self;
 }
 
@@ -400,6 +401,7 @@
     noteBuild = [[Note alloc]set:@"tR" :187.485];
     [songBuild addNote:noteBuild];
     [self setSong:songBuild];
+    
 }
 
 -(void)randomSong {
@@ -449,6 +451,109 @@
     }
     
     [self setSong:songBuild];
+}
+
+-(void)bestShot{
+    Song *songBuild = [[Song alloc] init];
+    Note *noteBuild;
+    noteBuild = [[Note alloc]set:@"tR" :3.503 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :4.223 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :4.471 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :5.183 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :5.415 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :5.863 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :6.071 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :9.207 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :9.959 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :10.143 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :10.791 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :11.007 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :11.455 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :11.655 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :12.903 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :13.663 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :13.847 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :14.527 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :14.775 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :15.279 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :15.479 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :20.383 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :21.583 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :21.839 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :22.063 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :22.303 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :23.527 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :23.743 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :23.959 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :24.199 :FALSE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :29.855 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :30.991 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :31.239 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :31.479 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :31.703 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :32.879 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :33.103 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :33.319 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :33.543 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :37.295 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :38.503 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :38.711 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :38.943 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tR" :39.183 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :40.359 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bR" :40.607 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"bL" :40.823 :TRUE];
+    [songBuild addNote:noteBuild];
+    noteBuild = [[Note alloc]set:@"tL" :41.063 :TRUE];
+    [songBuild addNote:noteBuild];
+    
+    [self setSong:songBuild];//index 3
 }
 
 @end
