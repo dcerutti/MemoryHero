@@ -117,6 +117,7 @@
 		37FFA535134A1C7D0089C11E /* SongLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongLibrary.m; sourceTree = "<group>"; };
 		74C673A4135689090018AA0B /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = ../../Users/samy3489/Desktop/play.png; sourceTree = "<group>"; };
 		74C673A71356890E0018AA0B /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = ../../Users/samy3489/Desktop/pause.png; sourceTree = "<group>"; };
+		74C673A913569F6D0018AA0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E974CD801352A61D00A31C1B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E974CD821352C88400A31C1B /* BG - Jack One.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "BG - Jack One.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +194,7 @@
 		3798D2961344D00C003F7223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74C673A913569F6D0018AA0B /* QuartzCore.framework */,
 				E974CD801352A61D00A31C1B /* AudioToolbox.framework */,
 				371C0F4C134FFA7300BD3CDB /* AVFoundation.framework */,
 				3798D2971344D00C003F7223 /* UIKit.framework */,

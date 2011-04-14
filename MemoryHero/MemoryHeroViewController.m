@@ -19,11 +19,18 @@
 -(IBAction)playTouched{
     [play setHidden:YES];
     [pause setHidden:NO];
+    [audioPlayer play];
+  
+   
+    
 }
 -(IBAction)pauseTouched{
     [pause setHidden:YES];
     [play setHidden:NO];
+    [audioPlayer pause];
+                                                                
 }
+
 
 -(IBAction)songsTouched{
     NSLog(@"songsButton");

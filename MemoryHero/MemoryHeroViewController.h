@@ -25,6 +25,9 @@
     IBOutlet UIButton *pause;
     NSTimeInterval startTime;
     
+    
+    
+    
     //Song Library
     SongLibrary *songLibrary;
     
@@ -48,6 +51,9 @@
 -(void)playAudio;
 -(void)buttonFlicker:(UIButton *)button;
 -(void)usrInput;
+-(void)play;
+-(void)pause;
+
 
 -(void)goSong;
 -(void)usrTurn;
