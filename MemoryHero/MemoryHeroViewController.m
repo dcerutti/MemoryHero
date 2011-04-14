@@ -16,6 +16,14 @@
 
 @implementation MemoryHeroViewController
 
+-(IBAction)playTouched{
+    [play setHidden:YES];
+    [pause setHidden:NO];
+}
+-(IBAction)pauseTouched{
+    [pause setHidden:YES];
+    [play setHidden:NO];
+}
 
 -(IBAction)songsTouched{
     NSLog(@"songsButton");
@@ -273,6 +281,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [play setHidden:YES];
     
     songLibrary = [[SongLibrary alloc]init];
     

@@ -21,6 +21,8 @@
     IBOutlet UILabel *status;
     IBOutlet UIPickerView *songListPicker;
     IBOutlet UIButton *songListButton;
+    IBOutlet UIButton *play;
+    IBOutlet UIButton *pause;
     NSTimeInterval startTime;
     
     //Song Library
