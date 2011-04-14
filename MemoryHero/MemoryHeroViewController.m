@@ -20,7 +20,7 @@
     [play setHidden:YES];
     [pause setHidden:NO];
     [audioPlayer play];
-  
+    isPause = FALSE;
    
     
 }
@@ -28,8 +28,9 @@
     [pause setHidden:YES];
     [play setHidden:NO];
     [audioPlayer pause];
-                                                                
+    isPause = TRUE;                                                        
 }
+
 
 
 -(IBAction)songsTouched{
@@ -72,7 +73,9 @@
     
     BOOL flag = true;
     while(flag){
-        
+        while(isPause){
+            sleep(0.2);
+        }    
         [NSThread sleepForTimeInterval:0.0214285714];
         
         int count = [noteImages count];
@@ -166,6 +169,10 @@
     startTime = [NSDate timeIntervalSinceReferenceDate];
     
     for(int i = 0; i < count; i++){
+        
+        while(isPause){
+            sleep(0.2);
+        }
         
         Note *noteNow = [beats objectAtIndex:i];
         float timeBeat = noteNow.timeStamp + 1.5;

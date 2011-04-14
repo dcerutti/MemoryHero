@@ -43,7 +43,7 @@
     NSMutableArray *usrTurn;
     Song *currentSong;
     int beatCount;
-    
+    BOOL isPause;
 }
 
 -(void)imageNoteGenerator;
