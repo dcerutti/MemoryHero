@@ -48,8 +48,8 @@
 		37C9C0AA1355765800119758 /* whiteNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C0A51355765800119758 /* whiteNote.png */; };
 		37C9C0AB1355765800119758 /* yellowNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C9C0A61355765800119758 /* yellowNote.png */; };
 		37FFA536134A1C7D0089C11E /* SongLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFA535134A1C7D0089C11E /* SongLibrary.m */; };
-		74C673A5135689090018AA0B /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C673A4135689090018AA0B /* play.png */; };
-		74C673A81356890E0018AA0B /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C673A71356890E0018AA0B /* pause.png */; };
+		74471D04135C92090071AC0A /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 74471D03135C92090071AC0A /* pause.png */; };
+		74471D06135C92100071AC0A /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 74471D05135C92100071AC0A /* play.png */; };
 		E974CD811352A61D00A31C1B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E974CD801352A61D00A31C1B /* AudioToolbox.framework */; };
 		E974CD831352C88400A31C1B /* BG - Jack One.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E974CD821352C88400A31C1B /* BG - Jack One.mp3 */; };
 /* End PBXBuildFile section */
@@ -115,8 +115,8 @@
 		37C9C0A61355765800119758 /* yellowNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowNote.png; sourceTree = "<group>"; };
 		37FFA534134A1C7D0089C11E /* SongLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongLibrary.h; sourceTree = "<group>"; };
 		37FFA535134A1C7D0089C11E /* SongLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongLibrary.m; sourceTree = "<group>"; };
-		74C673A4135689090018AA0B /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = ../../Users/samy3489/Desktop/play.png; sourceTree = "<group>"; };
-		74C673A71356890E0018AA0B /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = ../../Users/samy3489/Desktop/pause.png; sourceTree = "<group>"; };
+		74471D03135C92090071AC0A /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		74471D05135C92100071AC0A /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		74C673A913569F6D0018AA0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E974CD801352A61D00A31C1B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E974CD821352C88400A31C1B /* BG - Jack One.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "BG - Jack One.mp3"; sourceTree = "<group>"; };
@@ -287,8 +287,8 @@
 		37F17AAF1344D03E00248097 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				74C673A4135689090018AA0B /* play.png */,
-				74C673A71356890E0018AA0B /* pause.png */,
+				74471D03135C92090071AC0A /* pause.png */,
+				74471D05135C92100071AC0A /* play.png */,
 				37C9C0A21355765800119758 /* blueNote.png */,
 				37C9C0A31355765800119758 /* greenNote.png */,
 				37C9C0A41355765800119758 /* redNote.png */,
@@ -399,8 +399,8 @@
 				37C9C0A91355765800119758 /* redNote.png in Resources */,
 				37C9C0AA1355765800119758 /* whiteNote.png in Resources */,
 				37C9C0AB1355765800119758 /* yellowNote.png in Resources */,
-				74C673A5135689090018AA0B /* play.png in Resources */,
-				74C673A81356890E0018AA0B /* pause.png in Resources */,
+				74471D04135C92090071AC0A /* pause.png in Resources */,
+				74471D06135C92100071AC0A /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
