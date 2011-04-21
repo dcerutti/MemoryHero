@@ -167,18 +167,22 @@
     int count = [beats count];
     
     startTime = [NSDate timeIntervalSinceReferenceDate];
-    
+    NSTimeInterval pauseTotal = 0;
     for(int i = 0; i < count; i++){
         
+        NSTimeInterval pauseStart = [NSDate timeIntervalSinceReferenceDate];
         while(isPause){
             sleep(0.2);
         }
+        NSTimeInterval pauseEnd = [NSDate timeIntervalSinceReferenceDate];
+        NSTimeInterval pauseTime = pauseEnd - pauseStart;
+        pauseTotal += pauseTime;
         
         Note *noteNow = [beats objectAtIndex:i];
         float timeBeat = noteNow.timeStamp + 1.5;
         
         NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
-        NSTimeInterval totalTime = nowTime - startTime;
+        NSTimeInterval totalTime = nowTime - (startTime + pauseTotal);
         
         float sleepTime = timeBeat - totalTime;
         [NSThread sleepForTimeInterval:sleepTime];
