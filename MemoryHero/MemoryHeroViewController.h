@@ -24,6 +24,7 @@
     IBOutlet UIButton *play;
     IBOutlet UIButton *pause;
     NSTimeInterval startTime;
+
     
     
     
@@ -44,6 +45,8 @@
     Song *currentSong;
     int beatCount;
     BOOL isPause;
+    NSInteger picker;
+    
 }
 
 -(void)imageNoteGenerator;

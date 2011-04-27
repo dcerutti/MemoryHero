@@ -162,8 +162,8 @@
     [NSThread detachNewThreadSelector:@selector(usrInput) toTarget:self withObject:nil];
     
     songLibrary = [[SongLibrary alloc]init];
-    Song *bestShot = [songLibrary getSong:3];
-    NSMutableArray *beats = [bestShot getBeat];
+    Song *songSelected = [songLibrary getSong:picker];
+    NSMutableArray *beats = [songSelected getBeat];
     int count = [beats count];
     
     startTime = [NSDate timeIntervalSinceReferenceDate];
@@ -225,8 +225,8 @@
 -(void)usrInput{
     usrTurn = [[NSMutableArray alloc]init];
     NSMutableArray *usrReference = [[NSMutableArray alloc]init];
-    Song *bestShot = [songLibrary getSong:3];//to hardcoded.
-    NSMutableArray *beat = [bestShot getBeat];
+    Song *songSelected = [songLibrary getSong:picker];//to hardcoded.
+    NSMutableArray *beat = [songSelected getBeat];
     beatCount = -1;
     NSString *strUsr;
     NSString *strCS;
@@ -300,15 +300,9 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [play setHidden:YES];
-    
     songLibrary = [[SongLibrary alloc]init];
     
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bestShot.wav", [[NSBundle mainBundle] resourcePath]]];
-    NSError *error;
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    [audioPlayer prepareToPlay];
-    
-    [songListPicker setHidden:YES];
+    [songListPicker setHidden:NO];
     SongLibrary *sL = [[SongLibrary alloc] init];
     songList = [[NSMutableArray alloc] init];
     for (int i = 0; i < [sL getLibrarySize]; i++) {
@@ -316,9 +310,7 @@
         [songList addObject:str];   
     }
     
-    [NSThread detachNewThreadSelector:@selector(imageNoteGenerator) toTarget:self withObject:nil];
     scoreLabel.text = @"0";
-    
 }
 
 
@@ -375,7 +367,23 @@
 }
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    // WHAT TO DO WHEN A SONG IS CHOSEN???
+    //Right now this only works correctly on start up. If you begin the song and you want to change it to another song it will create another thread while the first one is still going. NSInteger picker is also used in this function to tell imageGenerator what song to get. Instead of using "Song *bestShot = [songLibrary getSong:3];" we now use "Song *selectedSong = [songLibrary getSong:picker];" letting the row selected decide which song to get. 
+    
+        if (row == 3){
+            NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bestShot.wav", [[NSBundle mainBundle] resourcePath]]];
+            NSError *error;
+            audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+            [audioPlayer prepareToPlay];
+        
+            picker = 3;
+        
+            [NSThread detachNewThreadSelector:@selector(imageNoteGenerator) toTarget:self withObject:nil];
+            
+        }
+    
+    [songListPicker setHidden:YES];
+    
+    
 }
 
 //Play First Measure

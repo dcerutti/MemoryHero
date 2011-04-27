@@ -456,6 +456,8 @@
 -(void)bestShot{
     Song *songBuild = [[Song alloc] init];
     Note *noteBuild;
+    [songBuild setName:@"Best Shot"];
+    
     noteBuild = [[Note alloc]set:@"tR" :3.503 :FALSE];
     [songBuild addNote:noteBuild];
     noteBuild = [[Note alloc]set:@"tL" :4.223 :FALSE];
