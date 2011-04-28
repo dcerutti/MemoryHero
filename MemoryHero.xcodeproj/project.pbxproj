@@ -25,6 +25,8 @@
 		3741B188134C35C60029A537 /* yellow_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3741B180134C35C60029A537 /* yellow_btn_down.png */; };
 		3741B189134C35C60029A537 /* yellow_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3741B181134C35C60029A537 /* yellow_btn.png */; };
 		375F1ADB134E3AB10008414A /* NoteImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F1ADA134E3AB10008414A /* NoteImage.m */; };
+		378D160E1369BFF6002B7746 /* best_shot_edit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 378D160C1369BFF6002B7746 /* best_shot_edit.wav */; };
+		378D160F1369BFF6002B7746 /* weezer_island_in_the_sun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 378D160D1369BFF6002B7746 /* weezer_island_in_the_sun.wav */; };
 		3798D2981344D00C003F7223 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2971344D00C003F7223 /* UIKit.framework */; };
 		3798D29A1344D00C003F7223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D2991344D00C003F7223 /* Foundation.framework */; };
 		3798D29C1344D00C003F7223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3798D29B1344D00C003F7223 /* CoreGraphics.framework */; };
@@ -86,6 +88,8 @@
 		3741B181134C35C60029A537 /* yellow_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_btn.png; sourceTree = "<group>"; };
 		375F1AD9134E3AB00008414A /* NoteImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteImage.h; sourceTree = "<group>"; };
 		375F1ADA134E3AB10008414A /* NoteImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteImage.m; sourceTree = "<group>"; };
+		378D160C1369BFF6002B7746 /* best_shot_edit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = best_shot_edit.wav; sourceTree = "<group>"; };
+		378D160D1369BFF6002B7746 /* weezer_island_in_the_sun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = weezer_island_in_the_sun.wav; sourceTree = "<group>"; };
 		3798D2931344D00C003F7223 /* MemoryHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3798D2971344D00C003F7223 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3798D2991344D00C003F7223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,6 +156,8 @@
 		3741B16F134C2A100029A537 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				378D160C1369BFF6002B7746 /* best_shot_edit.wav */,
+				378D160D1369BFF6002B7746 /* weezer_island_in_the_sun.wav */,
 				37C9C09F135572B600119758 /* bestShot.wav */,
 				E974CD821352C88400A31C1B /* BG - Jack One.mp3 */,
 				3741B172134C2A5F0029A537 /* TopLeft.wav */,
@@ -401,6 +407,8 @@
 				37C9C0AB1355765800119758 /* yellowNote.png in Resources */,
 				74471D04135C92090071AC0A /* pause.png in Resources */,
 				74471D06135C92100071AC0A /* play.png in Resources */,
+				378D160E1369BFF6002B7746 /* best_shot_edit.wav in Resources */,
+				378D160F1369BFF6002B7746 /* weezer_island_in_the_sun.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
