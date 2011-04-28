@@ -29,7 +29,6 @@
     NSTimeInterval pauseBankStart;
     NSTimeInterval pauseBankEnd;
     NSTimeInterval pauseBankTotal;
-
     
     
     

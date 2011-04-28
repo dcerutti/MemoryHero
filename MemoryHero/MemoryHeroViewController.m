@@ -82,6 +82,7 @@
         
         for(int i = 0; i < count; i++){
             while(isPause) {}
+            
             NoteImage *temp = [noteImages objectAtIndex:i];
             
             if(!temp.didFinish){
@@ -184,17 +185,20 @@
         float timeBeat = noteNow.timeStamp + 1.5;
         
         float sleepTime = timeBeat - totalTime;
+        NSTimeInterval sleepStart = [NSDate timeIntervalSinceReferenceDate];
         [NSThread sleepForTimeInterval:sleepTime];
-        [NSThread sleepForTimeInterval:pauseBankTotal];
-        pauseBankTotal = 0;
+        NSTimeInterval sleepEnd = [NSDate timeIntervalSinceReferenceDate];
         // if note is ready to come onto the screen but the game is paused
         // have the thread sleep for the amount of the time the game is paused until
         // it's unpaused
-        while(isPause) {
-            [NSThread sleepForTimeInterval:pauseBankTotal];
-            pauseTotal += pauseBankTotal;
-            pauseBankTotal = 0;
-        }
+        while(isPause) {}
+        if ((pauseBankStart > sleepStart) && (pauseBankStart < sleepEnd) && (pauseBankStart != 0))
+            sleepTime = sleepEnd - pauseBankStart;
+        else
+            sleepTime = 0;
+        pauseTotal += pauseBankTotal;
+        pauseBankTotal = 0;
+        [NSThread sleepForTimeInterval:sleepTime];
         dispatch_async( dispatch_get_main_queue(), ^{
             
             NoteImage *temp = [[NoteImage alloc]init];
