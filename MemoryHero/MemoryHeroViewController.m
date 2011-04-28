@@ -17,6 +17,8 @@
 @implementation MemoryHeroViewController
 
 -(IBAction)playTouched{
+    pauseBankEnd = [NSDate timeIntervalSinceReferenceDate];
+    pauseBankTotal = pauseBankEnd - pauseBankStart;
     [play setHidden:YES];
     [pause setHidden:NO];
     [audioPlayer play];
@@ -25,6 +27,7 @@
     
 }
 -(IBAction)pauseTouched{
+    pauseBankStart = [NSDate timeIntervalSinceReferenceDate];
     [pause setHidden:YES];
     [play setHidden:NO];
     [audioPlayer pause];
@@ -73,15 +76,12 @@
     
     BOOL flag = true;
     while(flag){
-        while(isPause){
-            sleep(0.2);
-        }    
         [NSThread sleepForTimeInterval:0.0214285714];
         
         int count = [noteImages count];
         
         for(int i = 0; i < count; i++){
-            
+            while(isPause) {}
             NoteImage *temp = [noteImages objectAtIndex:i];
             
             if(!temp.didFinish){
@@ -95,8 +95,8 @@
                     
                     dispatch_async( dispatch_get_main_queue(), ^{
                         
-                        NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
-                        NSTimeInterval totalTime = nowTime - startTime;
+                        //NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
+                        //NSTimeInterval totalTime = nowTime - startTime;
                         
                         [image removeFromSuperview];
                         temp.didFinish = true;
@@ -124,7 +124,7 @@
                     if(temp.isLastNote){
                         flag = false;
                     }
-                }
+                } //endPosition < 30
                 
                 //moveNote
                 dispatch_async( dispatch_get_main_queue(), ^{
@@ -170,23 +170,31 @@
     NSTimeInterval pauseTotal = 0;
     for(int i = 0; i < count; i++){
         
-        NSTimeInterval pauseStart = [NSDate timeIntervalSinceReferenceDate];
-        while(isPause){
-            sleep(0.2);
-        }
-        NSTimeInterval pauseEnd = [NSDate timeIntervalSinceReferenceDate];
-        NSTimeInterval pauseTime = pauseEnd - pauseStart;
-        pauseTotal += pauseTime;
-        
-        Note *noteNow = [beats objectAtIndex:i];
-        float timeBeat = noteNow.timeStamp + 1.5;
+        while(isPause){}
+        // keep track of how long the game has been paused 
+        // so that you can subtract that amount of time from the
+        // "totalTime" the game has been running
+        pauseTotal += pauseBankTotal;
+        pauseBankTotal = 0;
         
         NSTimeInterval nowTime = [NSDate timeIntervalSinceReferenceDate];
         NSTimeInterval totalTime = nowTime - (startTime + pauseTotal);
         
+        Note *noteNow = [beats objectAtIndex:i];
+        float timeBeat = noteNow.timeStamp + 1.5;
+        
         float sleepTime = timeBeat - totalTime;
         [NSThread sleepForTimeInterval:sleepTime];
-        
+        [NSThread sleepForTimeInterval:pauseBankTotal];
+        pauseBankTotal = 0;
+        // if note is ready to come onto the screen but the game is paused
+        // have the thread sleep for the amount of the time the game is paused until
+        // it's unpaused
+        while(isPause) {
+            [NSThread sleepForTimeInterval:pauseBankTotal];
+            pauseTotal += pauseBankTotal;
+            pauseBankTotal = 0;
+        }
         dispatch_async( dispatch_get_main_queue(), ^{
             
             NoteImage *temp = [[NoteImage alloc]init];
@@ -300,6 +308,9 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [play setHidden:YES];
+    pauseBankTotal = 0;
+    pauseBankStart = 0;
+    pauseBankEnd = 0;
     songLibrary = [[SongLibrary alloc]init];
     
     [songListPicker setHidden:NO];

@@ -24,6 +24,11 @@
     IBOutlet UIButton *play;
     IBOutlet UIButton *pause;
     NSTimeInterval startTime;
+    
+    //pause time variables
+    NSTimeInterval pauseBankStart;
+    NSTimeInterval pauseBankEnd;
+    NSTimeInterval pauseBankTotal;
 
     
     
